@@ -1,1 +1,12 @@
-<p>login works!</p>
+<div class="centering">
+    <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
+    <div class="acesse-text">
+        <span class="acesse-text">Acesse o sistema de agendamento.</span>
+    </div>
+    <form class="form-wrapper">
+        <input placeholder="E-mail" type="email" autofocus>
+        <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <i><img
+                src="./../../assets/hidden-icon.svg" alt="" (click)="changeInputType()"></i>
+        <button>Acessar</button>
+    </form>
+</div>

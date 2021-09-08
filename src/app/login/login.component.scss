@@ -1,0 +1,67 @@
+.centering {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.logo-img {
+  display: block;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.acesse-text {
+  text-align: center;
+
+  span {
+    color: #3e3e3e;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 32px;
+  }
+}
+
+input {
+  border-radius: 16px 16px 16px 16px;
+  border: none;
+  background-color: #f7f7fd;
+  width: 100%;
+  outline: none;
+  height: 64px;
+  font-size: 12px;
+  line-height: 120%;
+  box-sizing: border-box;
+}
+
+input[type="email"] {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+input[type="password"] {
+  margin-bottom: 24px;
+}
+
+button {
+  width: 100%;
+  background-color: #fe4400;
+  border-radius: 16px 16px 16px 16px;
+  border: none;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  height: 64px;
+  cursor: pointer;
+  line-height: 120%;
+}
+
+/* small devices */
+@media screen and (max-width: 568px) {
+}
+
+/* anything else */
