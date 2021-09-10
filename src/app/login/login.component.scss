@@ -25,6 +25,10 @@
   }
 }
 
+.form-wrapper{
+  width: 100%;
+}
+
 input {
   border-radius: 16px 16px 16px 16px;
   border: none;
@@ -34,6 +38,11 @@ input {
   height: 64px;
   font-size: 12px;
   line-height: 120%;
+  -webkit-tap-highlight-color: transparent;
+  padding-left : 10px;
+  padding-right: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -42,8 +51,13 @@ input[type="email"] {
   margin-bottom: 16px;
 }
 
-input[type="password"] {
+input[type="password"], input[type="text"]{
   margin-bottom: 24px;
+  padding-left : 10px;
+  padding-right: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
@@ -58,6 +72,7 @@ button {
   height: 64px;
   cursor: pointer;
   line-height: 120%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* small devices */

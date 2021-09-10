@@ -1,12 +1,18 @@
 <div class="centering">
+
     <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
     <div class="acesse-text">
-        <span class="acesse-text">Acesse o sistema de agendamento.</span>
+        <span>Acesse o sistema de agendamento.</span>
     </div>
     <form class="form-wrapper">
-        <input placeholder="E-mail" type="email" autofocus>
-        <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <i><img
-                src="./../../assets/hidden-icon.svg" alt="" (click)="changeInputType()"></i>
+        <div>
+            <input placeholder="E-mail" type="email" autofocus>
+        </div>
+        <div>
+            <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <img
+                    [src]="showPassword ? './../../assets/show-icon.svg' : './../../assets/hidden-icon.svg'" alt="" (click)="changeInputType()"
+                    style="cursor: pointer; margin-left: -35px; -webkit-tap-highlight-color: transparent;">
+        </div>
         <button>Acessar</button>
     </form>
 </div>
