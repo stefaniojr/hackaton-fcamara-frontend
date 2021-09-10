@@ -38,13 +38,16 @@ button {
     line-height: 120%;
     margin-bottom: 16px;
     -webkit-tap-highlight-color: transparent;
-    
+    text-align: left;
+    padding-left: 25px;
   }
 
 .ver-agendamentos-btn{
     background: url('./../../assets/first-btn.svg') no-repeat scroll 0 0 transparent;
+    background-size:cover;
 }
 
 .agendar-btn{
     background: url('./../../assets/second-btn.svg') no-repeat scroll 0 0 transparent;
+    background-size:cover;
 }
