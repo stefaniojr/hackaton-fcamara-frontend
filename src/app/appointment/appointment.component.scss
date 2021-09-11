@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 0;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.centering {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.step-img {
+  display: block;
+  margin-top: 26px;
+  margin-bottom: 33px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-confirm {
+  margin-bottom: 54px;
+}
+
+.finish-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-text {
+  text-align: center;
+  margin-bottom: 16px;
+
+  span {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+
+  p {
+    color: #000;
+    font-size: 18px;
+    line-height: 130%;
+  }
+}
+
+button {
+  width: 100%;
+  border-radius: 16px 16px 16px 16px;
+  border: none;
+  background-color: #fe4400;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  height: 64px;
+  cursor: pointer;
+  line-height: 120%;
+  margin-bottom: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.option1-btn {
+  background: url("./../../assets/first-btn.svg") no-repeat scroll 0 0
+    transparent;
+  background-size: cover;
+  text-align: left;
+  padding-left: 25px;
+}
+
+.option2-btn {
+  background: url("./../../assets/second-btn.svg") no-repeat scroll 0 0
+    transparent;
+  background-size: cover;
+  text-align: left;
+  padding-left: 25px;
+}
+
+.protocolo-wrapper{
+    display: flex;
+    margin-bottom: 19px;
+    p{
+        color: #FE4400;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    img{
+        width: 15px;
+        color: #FE4400;
+    }
+}

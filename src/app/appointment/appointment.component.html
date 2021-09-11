@@ -1,1 +1,54 @@
-<p>appointment works!</p>
+<div *ngIf="false">
+    <div class="header">
+        <img src="./../../assets/back-button.svg" alt="">
+        <img src="./../../assets/close-button.svg" alt="">
+    </div>
+    <div class="centering">
+        <div class="step-1" *ngIf="false">
+            <img src="./../../assets/person-location.svg" alt="" class="step-img">
+            <div class="step-text">
+                <span>E em qual escritório você vai trabalhar?</span>
+            </div>
+            <button class="option1-btn">Santos</button>
+            <button class="option2-btn">São Paulo</button>
+        </div>
+        <div class="step-2" *ngIf="false">
+            aaa
+        </div>
+        <div class="step-3" *ngIf="true">
+            <img src="./../../assets/person-invite.svg" alt="" class="step-img">
+            <div class="step-text">
+                <span>Fulano(a), você quer convidar alguém?</span>
+            </div>
+            <button class="option1-btn">Hoje não</button>
+            <button class="option2-btn">Quero sim</button>
+        </div>
+        <div class="step-list" *ngIf="false">
+
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="true" style="width: 100%;">
+    <div class="header-confirm">
+        <img src="./../../assets/person-confirmation.svg" alt="" class="finish-img">
+    </div>
+   
+        <div class="finish" *ngIf="false">
+            <div class="step-text"><span>Tudo certo com seu agendamento, Fulano(a).</span>
+            
+            </div>
+        </div>
+        <div class="finish-list" *ngIf="true">
+            <div class="step-text"><span>Prontinho, Fulano(a). Já enviamos os convites.</span>
+                <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
+            </div>
+        </div>
+        <div class="protocolo-wrapper">
+            <p>Acesse os protocolos de segurança</p>
+            <img src="./../../assets/right-arrow.svg" alt="">
+        </div>
+        <button>Pode deixar</button>
+    
+</div>
