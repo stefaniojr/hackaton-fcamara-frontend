@@ -1,18 +1,24 @@
-<div class="centering">
-
-    <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
-    <div class="acesse-text">
-        <span>Acesse o sistema de agendamento.</span>
+<div class="browser-wrapper">
+    <div class="container h-100">
+        <div class="row min-vh-100 justify-content-center align-items-center">
+            <div class="col-10 p-0">
+                <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
+                <div class="acesse-text">
+                    <span>Acesse o sistema de<br>agendamento.</span>
+                </div>
+                <form class="form-wrapper">
+                    <div>
+                        <input placeholder="E-mail" type="email" autofocus>
+                    </div>
+                    <div>
+                        <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <img
+                            [src]="showPassword ? './../../assets/show-icon.svg' : './../../assets/hidden-icon.svg'"
+                            alt="" (click)="changeInputType()"
+                            style="cursor: pointer; margin-left: -35px; -webkit-tap-highlight-color: transparent;">
+                    </div>
+                    <button>Acessar</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <form class="form-wrapper">
-        <div>
-            <input placeholder="E-mail" type="email" autofocus>
-        </div>
-        <div>
-            <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <img
-                    [src]="showPassword ? './../../assets/show-icon.svg' : './../../assets/hidden-icon.svg'" alt="" (click)="changeInputType()"
-                    style="cursor: pointer; margin-left: -35px; -webkit-tap-highlight-color: transparent;">
-        </div>
-        <button>Acessar</button>
-    </form>
 </div>

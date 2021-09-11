@@ -1,5 +1,50 @@
-@import "@fontsource/metropolis"; 
+@import "@fontsource/metropolis";
 
 * {
   font-family: "Metropolis";
+}
+
+button{
+  width: 100%;
+  border-radius: 16px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* medium devices */
+@media screen and (min-width: 568px) {
+  .browser-wrapper {
+    background-color: #fff;
+  }
+
+  .container {
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 10%);
+    border-radius: 16px 16px 16px 16px;
+    width: 60%;
+    margin: 100px auto;
+  }
+
+  .row {
+    min-height: fit-content !important;
+  }
+
+  .col-10 {
+    margin: 50px 0;
+  }
+}
+
+/* large devices */
+@media screen and (min-width: 960px) {
+  .container {
+    width: 45%;
+  }
+}
+
+/* extra large devices */
+@media screen and (min-width: 1140px) {
+  .container {
+    width: 30%;
+  }
 }

@@ -1,6 +1,4 @@
-.header {
-  display: flex;
-  justify-content: space-between;
+header {
   border-bottom: 1px solid #f4f4f4;
   padding: 0;
 
@@ -8,15 +6,6 @@
     cursor: pointer;
   }
 }
-
-.centering {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 
 .step-img {
   display: block;
@@ -56,19 +45,13 @@
 }
 
 button {
-  width: 100%;
-  border-radius: 16px 16px 16px 16px;
-  border: none;
   background-color: #fe4400;
-  font-family: inherit;
   font-size: 20px;
   font-weight: 400;
   color: #fff;
   height: 64px;
-  cursor: pointer;
   line-height: 120%;
   margin-bottom: 16px;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .option1-btn {
