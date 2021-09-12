@@ -20,6 +20,7 @@
                         </div>
                         <button class="option1-btn" (click)="goForward()">Santos</button>
                         <button class="option2-btn" (click)="goForward()">São Paulo</button>
+                        <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img">
                     </div>
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-text">
@@ -30,6 +31,7 @@
                             <span>Em qual período?</span>
                         </div>
                         <button (click)="goForward()">Agendar</button>
+                        <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img">
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" alt="" class="step-img">
@@ -38,6 +40,7 @@
                         </div>
                         <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
                         <button class="option2-btn" (click)="goForward()">Quero sim</button>
+                        <img src="./../../assets/appointment-step-3.svg" alt="" class="step-img">
                     </div>
                     <div class="step-4" *ngIf="showStep4" [@enterAnimation]>
                         <div class="step-text">
@@ -113,7 +116,7 @@
                     <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
                 </div>
                 <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
-                    <p>Acesse os protocolos de segurança</p>
+                    <span>Acesse os protocolos de segurança</span>
                     <img src="./../../assets/right-arrow.svg" alt="">
                 </div>
                 <button>Pode deixar</button>
