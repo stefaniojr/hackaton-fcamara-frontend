@@ -1,6 +1,6 @@
 <div class="browser-wrapper">
     <div class="container h-100">
-        <header>
+        <header *ngIf="!showFinish">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="p-2">
                     <img src="./../../assets/back-button.svg" alt="" (click)="goBack()">
@@ -10,9 +10,9 @@
                 </div>
             </div>
         </header>
-        <div class="row min-vh-100 justify-content-center align-items-center">
+        <div class="row min-vh-100 justify-content-center align-items-center" *ngIf="!showFinish">
             <div class="col-10 p-0">
-                <div *ngIf="true"> 
+                <div *ngIf="true">
                     <div class="step-1" *ngIf="showStep1" [@enterAnimation]>
                         <img src="./../../assets/person-location.svg" alt="" class="step-img">
                         <div class="step-text">
@@ -22,45 +22,102 @@
                         <button class="option2-btn" (click)="goForward()">São Paulo</button>
                     </div>
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
-                        aaa
+                        <div class="step-text">
+                            <span>Em qual dia?</span>
+                        </div>
+                        <!-- calendario -->
+                        <div class="step-text">
+                            <span>Em qual período?</span>
+                        </div>
+                        <button (click)="goForward()">Agendar</button>
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" alt="" class="step-img">
                         <div class="step-text">
                             <span>Fulano(a), você quer<br>convidar alguém?</span>
                         </div>
-                        <button class="option1-btn">Hoje não</button>
-                        <button class="option2-btn">Quero sim</button>
+                        <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
+                        <button class="option2-btn" (click)="goForward()">Quero sim</button>
                     </div>
-                    <div class="step-list" *ngIf="false">
+                    <div class="step-4" *ngIf="showStep4" [@enterAnimation]>
+                        <div class="step-text">
+                            <span>#SangueLaranja</span>
+                        </div>
+                        <div class="fixed-list">
+                            <div class="person-card" (click)="onSelectCard()"
+                                [ngClass]="{'person-card-selected': selected} ">
+                                <img src="./../../assets/avatars/ana.jpg" alt="">
+                                <span>Ana Luíza Gabatteli</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/matheus.jpg" alt="">
+                                <span>Matheus Honorato</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/natan.jpg" alt="">
+                                <span>Natã Menezes</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/jr.jpg" alt="">
+                                <span>Stefânio Soares Junior</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/ana.jpg" alt="">
+                                <span>Ana Luíza Gabatteli</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/matheus.jpg" alt="">
+                                <span>Matheus Honorato</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/natan.jpg" alt="">
+                                <span>Natã Menezes</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/jr.jpg" alt="">
+                                <span>Stefânio Soares Junior</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/ana.jpg" alt="">
+                                <span>Ana Luíza Gabatteli</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/matheus.jpg" alt="">
+                                <span>Matheus Honorato</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/natan.jpg" alt="">
+                                <span>Natã Menezes</span>
+                            </div>
+                            <div class="person-card">
+                                <img src="./../../assets/avatars/jr.jpg" alt="">
+                                <span>Stefânio Soares Junior</span>
+                            </div>
+                        </div>
+                        <button (click)="finishAppointment(true)">Convidar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row finish-wrapper" *ngIf="showFinish" [@enterAnimation]>
+            <img src="./../../assets/person-confirmation.svg" alt="" class="finish-img p-0">
+        </div>
+        <div class="row justify-content-center" *ngIf="showFinish" [@enterAnimation]>
+            <div class="col-10 p-0 m-0">
+                <div class="step-text" *ngIf="!invitedFriends"><span>Tudo certo com seu<br>agendamento,
+                        Fulano(a).</span>
+                </div>
+                <div class="step-text" *ngIf="invitedFriends"><span>Prontinho, Fulano(a). Já<br>enviamos os
+                        convites.</span>
+                    <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
+                </div>
+                <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
+                    <p>Acesse os protocolos de segurança</p>
+                    <img src="./../../assets/right-arrow.svg" alt="">
+                </div>
+                <button>Pode deixar</button>
+            </div>
+        </div>
     </div>
 </div>
-
-
-
-<!-- <div *ngIf="false" style="width: 100%;">
-    <div class="header-confirm">
-        <img src="./../../assets/person-confirmation.svg" alt="" class="finish-img">
-    </div>
-
-    <div class="finish" *ngIf="false">
-        <div class="step-text"><span>Tudo certo com seu agendamento, Fulano(a).</span>
-
-        </div>
-    </div>
-    <div class="finish-list" *ngIf="true">
-        <div class="step-text"><span>Prontinho, Fulano(a). Já enviamos os convites.</span>
-            <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
-        </div>
-    </div>
-    <div class="protocolo-wrapper">
-        <p>Acesse os protocolos de segurança</p>
-        <img src="./../../assets/right-arrow.svg" alt="">
-    </div>
-    <button>Pode deixar</button>
-
-</div> -->

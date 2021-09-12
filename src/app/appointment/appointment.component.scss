@@ -1,9 +1,10 @@
 header {
-  border-bottom: 1px solid #f4f4f4;
   padding: 0;
-
   img {
     cursor: pointer;
+  }
+  div{
+    border-bottom: 1px solid #f4f4f4;
   }
 }
 
@@ -15,14 +16,15 @@ header {
   margin-right: auto;
 }
 
-.header-confirm {
+.finish-wrapper{
   margin-bottom: 54px;
 }
 
 .finish-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  @media screen and (min-width: 568px){
+    border-radius: 16px 16px 0 0;
+  }
 }
 
 .step-text {
@@ -71,7 +73,6 @@ button {
 }
 
 .protocolo-wrapper{
-    display: flex;
     margin-bottom: 19px;
     p{
         color: #FE4400;
@@ -83,4 +84,36 @@ button {
         width: 15px;
         color: #FE4400;
     }
+}
+
+.person-card{
+  background-color: #F7F7FD;
+  border-radius: 16px 16px 16px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+  img {
+    vertical-align: middle;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 7px 8px 7px 9px;
+  }
+
+  span{
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0px;
+  }
+
+}
+
+.person-card-selected{
+  background-color: rgba(254, 187, 162, 40%);
+}
+
+.fixed-list{
+  height:430px;
+  overflow:auto;
+  margin-bottom: 32px;
 }

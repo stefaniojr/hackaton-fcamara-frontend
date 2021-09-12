@@ -38,6 +38,10 @@ input {
   box-sizing: border-box;
 }
 
+input:focus{
+  border: 1px solid #F7B686;
+}
+
 input[type="email"] {
   margin-top: 32px;
   margin-bottom: 16px;
