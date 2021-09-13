@@ -24,6 +24,7 @@
     "@syncfusion/ej2-angular-calendars": "^19.2.60",
     "bootstrap": "^5.1.1",
     "class-transformer": "^0.4.0",
+    "cldr-data": "^36.0.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",

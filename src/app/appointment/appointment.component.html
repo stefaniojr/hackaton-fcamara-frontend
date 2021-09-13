@@ -26,7 +26,9 @@
                         <div class="step-text">
                             <span>Em qual dia?</span>
                         </div> 
-                        <ejs-calendar></ejs-calendar>
+                        <div class="calendar-wrapper d-flex w-100 justify-content-center align-items-center">
+                            <ejs-calendar locale='pt' [min]='minDate' [max]='maxDate'></ejs-calendar>
+                        </div>
                         
                         <div class="step-text">
                             <span>Em qual período?</span>
