@@ -11,7 +11,7 @@ export class ApiService {
   /**
    * URLS
    */
-  // public static SOME_ENDPOINT = 'endpoint/';
+  public static LOGIN_URL = 'login/';
 
   /**
    * Realiza uma requisição do tipo POST
@@ -109,7 +109,7 @@ export class ApiService {
    * Concatena a URL base da configuração
    */
   protected getBaseURL(): string {
-    let baseURL = "http://localhost:3000/";
+    let baseURL = "http://localhost/";
     return baseURL;
   }
 }

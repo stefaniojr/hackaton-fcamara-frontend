@@ -17,9 +17,6 @@ import { Router } from '@angular/router';
 })
 export class AppointmentComponent implements OnInit {
 
-  //startAt = new Date();
-  minDate = new Date();
-  maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
   
   showStep1: boolean = true;
   showStep2: boolean = false;
@@ -105,9 +102,5 @@ export class AppointmentComponent implements OnInit {
 
   goHome() {
     this.router.navigate(['/home']);
-  }
-
-  onSelect(event: any) {
-    console.log(event);
   }
 }

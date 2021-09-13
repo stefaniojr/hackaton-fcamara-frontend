@@ -26,10 +26,8 @@
                         <div class="step-text">
                             <span>Em qual dia?</span>
                         </div> 
-                        <mat-calendar #picker
-                        startAt="09/2021"
-        [minDate]="minDate" 
-        [maxDate]="maxDate"  (selectedChange)="onSelect($event)" ></mat-calendar>
+                        <ejs-calendar></ejs-calendar>
+                        
                         <div class="step-text">
                             <span>Em qual período?</span>
                         </div>

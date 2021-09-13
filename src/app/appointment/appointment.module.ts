@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AppointmentRoutingModule } from './appointment-routing.module';
 import { AppointmentComponent } from './appointment.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   imports: [
     CommonModule,
     AppointmentRoutingModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    CalendarModule
   ]
 })
 export class AppointmentModule { }
