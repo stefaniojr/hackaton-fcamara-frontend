@@ -6,7 +6,7 @@
                     <img src="./../../assets/back-button.svg" alt="" (click)="goBack()">
                 </div>
                 <div class="p-2">
-                    <img src="./../../assets/close-button.svg" alt="">
+                    <img src="./../../assets/close-button.svg" alt="" (click)="goHome()">
                 </div>
             </div>
         </header>
@@ -25,8 +25,11 @@
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-text">
                             <span>Em qual dia?</span>
-                        </div>
-                        <!-- calendario -->
+                        </div> 
+                        <mat-calendar #picker
+                        startAt="09/2021"
+        [minDate]="minDate" 
+        [maxDate]="maxDate"  (selectedChange)="onSelect($event)" ></mat-calendar>
                         <div class="step-text">
                             <span>Em qual período?</span>
                         </div>
@@ -116,10 +119,10 @@
                     <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
                 </div>
                 <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
-                    <span>Acesse os protocolos de segurança</span>
+                    <a href="https://pt.slideshare.net/FCamara_Consultoria?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview" target="_blank">Acesse os protocolos de segurança</a>
                     <img src="./../../assets/right-arrow.svg" alt="">
                 </div>
-                <button>Pode deixar</button>
+                <button (click)="goHome()">Pode deixar</button>
             </div>
         </div>
     </div>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AppointmentRoutingModule } from './appointment-routing.module';
 import { AppointmentComponent } from './appointment.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { AppointmentComponent } from './appointment.component';
   ],
   imports: [
     CommonModule,
-    AppointmentRoutingModule
+    AppointmentRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class AppointmentModule { }

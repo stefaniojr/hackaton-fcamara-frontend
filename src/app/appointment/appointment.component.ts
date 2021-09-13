@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointment',
@@ -15,6 +16,11 @@ import { trigger, style, animate, transition } from '@angular/animations';
   ],
 })
 export class AppointmentComponent implements OnInit {
+
+  //startAt = new Date();
+  minDate = new Date();
+  maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
+  
   showStep1: boolean = true;
   showStep2: boolean = false;
   showStep3: boolean = false;
@@ -23,7 +29,7 @@ export class AppointmentComponent implements OnInit {
   selected: boolean = false;
   invitedFriends: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -80,7 +86,7 @@ export class AppointmentComponent implements OnInit {
       this.showStep3 = false;
       this.showStep4 = false;
       this.showFinish = false;
-      //go home
+      this.goHome();
     }
   }
 
@@ -95,5 +101,13 @@ export class AppointmentComponent implements OnInit {
     this.showStep4 = false;
     this.showFinish = true;
     this.invitedFriends = invited;
+  }
+
+  goHome() {
+    this.router.navigate(['/home']);
+  }
+
+  onSelect(event: any) {
+    console.log(event);
   }
 }

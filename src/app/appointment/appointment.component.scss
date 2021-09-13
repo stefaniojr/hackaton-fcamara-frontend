@@ -3,7 +3,7 @@ header {
   img {
     cursor: pointer;
   }
-  div{
+  div {
     border-bottom: 1px solid #f4f4f4;
   }
 }
@@ -16,13 +16,13 @@ header {
   margin-right: auto;
 }
 
-.finish-wrapper{
+.finish-wrapper {
   margin-bottom: 54px;
 }
 
 .finish-img {
   width: 100%;
-  @media screen and (min-width: 568px){
+  @media screen and (min-width: 568px) {
     border-radius: 16px 16px 0 0;
   }
 }
@@ -57,35 +57,36 @@ button {
 }
 
 .option1-btn {
-  background: #3E3E9D;
+  background: #3e3e9d;
   background-size: cover;
   text-align: left;
   padding-left: 25px;
 }
 
 .option2-btn {
-  background: #FE4400;
+  background: #fe4400;
   background-size: cover;
   text-align: left;
   padding-left: 25px;
 }
 
-.protocolo-wrapper{
-    margin-bottom: 19px;
-    span{
-        color: #FE4400;
-        font-size: 12px;
-        cursor: pointer;
-    }
+.protocolo-wrapper {
+  margin-bottom: 19px;
+  a {
+    text-decoration: none;
+    color: #fe4400;
+    font-size: 12px;
+    cursor: pointer;
+  }
 
-    img{
-        width: 15px;
-        color: #FE4400;
-    }
+  img {
+    width: 15px;
+    color: #fe4400;
+  }
 }
 
-.person-card{
-  background-color: #F7F7FD;
+.person-card {
+  background-color: #f7f7fd;
   border-radius: 16px 16px 16px 16px;
   margin-bottom: 8px;
   cursor: pointer;
@@ -98,20 +99,23 @@ button {
     margin: 7px 8px 7px 9px;
   }
 
-  span{
+  span {
     font-size: 16px;
     line-height: 130%;
     letter-spacing: 0px;
   }
-
 }
 
-.person-card-selected{
+.person-card-selected {
   background-color: rgba(254, 187, 162, 40%);
 }
 
-.fixed-list{
-  height:430px;
-  overflow:auto;
+.fixed-list {
+  height: 430px;
+  overflow: auto;
   margin-bottom: 32px;
+}
+
+.demo-inline-calendar-card {
+  width: 300px;
 }
