@@ -25,7 +25,7 @@ export class ListAppointmentsComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -28,9 +30,11 @@ export class HomeComponent implements OnInit {
   onBoarding2 = false;
   onBoarding3 = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AuthService, private storage: StorageService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.storage.get();
+  }
 
   goAppointment() {
     this.router.navigate(['/appointment']);
@@ -63,5 +67,10 @@ export class HomeComponent implements OnInit {
     this.onBoarding1 = false;
     this.onBoarding2 = false;
     this.onBoarding3 = false;
+  }
+
+  public async logout() {
+    // logout da aplicação.
+    await this.auth.logout();
   }
 }

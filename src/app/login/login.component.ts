@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   goHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
     /**
@@ -58,15 +58,8 @@ export class LoginComponent implements OnInit {
           this.form.value.email,
           this.form.value.senha
         ); // faz requisição à api e recupera o token
-        console.log(this.form.value);
-        const formData: FormData = new FormData();
-        // formData.append('email', this.form.value.email);
-        // formData.append('senha', this.form.value.senha);
-       
-        //realiza o login do usuário
-        //console.log(profile);
         await this.auth.login(profile); // salva o token
-        this.router.navigate(["home"]); // redireciona para root path
+        this.router.navigate(["/"]); // redireciona para root path
         this.form.reset(); // reseta o form
       } catch (e) {
         console.log(e);

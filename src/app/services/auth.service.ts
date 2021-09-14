@@ -22,7 +22,7 @@ export class AuthService {
    */
   async login(profile: Profile) {
     await this.storage.set(this.key, classToPlain(profile));
-    // this.loggedIn.next(profile);
+    this.loggedIn.next(profile);
   }
 
   /**
@@ -30,7 +30,7 @@ export class AuthService {
    */
   public async logout(): Promise<void> {
     await this.storage.clear();
-    // this.loggedOut.next(true);
+    this.loggedOut.next(true);
     this.router.navigate(["/login"]);
   }
 
@@ -39,6 +39,10 @@ export class AuthService {
    */
   public async isAuthenticated(): Promise<boolean> {
     const token = await this.storage.get(this.key);
-    return token != null;
+    if (token == null){
+      return false;
+    }
+    var profile = JSON.parse(token);
+    return profile.status ? true : false;
   }
 }

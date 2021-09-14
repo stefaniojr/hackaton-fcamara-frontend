@@ -26,7 +26,6 @@ export class ApiService {
     model: ClassConstructor<T>
   ): Promise<any> {
     const res = await this.http.post(this.buildURL(endpoint), data).toPromise();
-    console.log(res);
     if (typeof (model as any).toClass === "function") {
       return (model as any).toClass(res as any);
     } else {
@@ -124,7 +123,6 @@ export class ApiService {
       var form_data = new FormData();
       form_data.append("email", email);
       form_data.append("senha", password);
-      
       return await this.makePost(
         ApiService.LOGIN_URL,
         form_data,
