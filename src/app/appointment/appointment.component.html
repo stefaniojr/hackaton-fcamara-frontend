@@ -25,14 +25,62 @@
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-text">
                             <span>Em qual dia?</span>
-                        </div> 
-                        <div class="calendar-wrapper d-flex w-100 justify-content-center align-items-center">
-                            <ejs-calendar locale='pt' [min]='minDate' [max]='maxDate'></ejs-calendar>
                         </div>
-                        
-                        <div class="step-text">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-12 m-2">
+                                <mat-calendar [dateFilter]="myFilter" #picker [minDate]="minDate" [maxDate]="maxDate"
+                                (selectedChange)="onSelect($event)"></mat-calendar>
+                            </div>  
+                        </div>
+                        <div class="step-text m-4">
                             <span>Em qual período?</span>
                         </div>
+                        <mat-radio-group class="radio-group">
+                            <div class="row justify-content-center align-items-center mb-3">
+                                <div class="col-4">
+                                    <mat-radio-button class="radio-button" value="M">
+                                        <div class="turno-text">Manhã</div>
+                                        <div class="detail-text">8h - 12h</div>
+                                    </mat-radio-button>
+                                </div>
+                                <div class="col-8">
+                                    <div class="detail-text float-end">25%</div>
+                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    </mat-progress-bar>
+                                    <div class="detail-text float-end">Capacidade</div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center align-items-center mb-3">
+                                <div class="col-4">
+                                    <mat-radio-button class="radio-button" value="T">
+                                        <div class="turno-text">Tarde</div>
+                                        <div class="detail-text">12 - 18h</div>
+                                    </mat-radio-button>
+                                </div>
+                                <div class="col-8">
+                                    <div class="detail-text float-end">25%</div>
+                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    </mat-progress-bar>
+                                    <div class="detail-text float-end">Capacidade</div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center align-items-center mb-3">
+                                <div class="col-4">
+                                    <mat-radio-button class="radio-button" value="A">
+                                        <div class="turno-text">Ambos</div>
+                                        <div class="detail-text">8h - 18h</div>
+                                    </mat-radio-button>
+                                </div>
+                                <div class="col-8">
+                                    <div class="detail-text float-end">25%</div>
+                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    </mat-progress-bar>
+                                    <div class="detail-text float-end">Capacidade</div>
+                                </div>
+                            </div>
+                        </mat-radio-group>
                         <button (click)="goForward()">Agendar</button>
                         <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img">
                     </div>
@@ -119,7 +167,8 @@
                     <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
                 </div>
                 <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
-                    <a href="https://pt.slideshare.net/FCamara_Consultoria?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview" target="_blank">Acesse os protocolos de segurança</a>
+                    <a href="https://pt.slideshare.net/FCamara_Consultoria?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview"
+                        target="_blank">Acesse os protocolos de segurança</a>
                     <img src="./../../assets/right-arrow.svg" alt="">
                 </div>
                 <button (click)="goHome()">Pode deixar</button>

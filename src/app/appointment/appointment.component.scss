@@ -1,5 +1,6 @@
 header {
   padding: 0;
+  margin-bottom: 45px;
   img {
     cursor: pointer;
   }
@@ -118,4 +119,49 @@ button {
 
 .demo-inline-calendar-card {
   width: 300px;
+}
+
+input[type="radio"] {
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+  //  appearance: none;
+
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: #FE4400;
+  transition: 0.2s all linear;
+
+}
+
+input[type="radio"]:checked {
+  border: 6px solid black;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.turno-text{
+  margin-left: 3px;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.detail-text{
+  margin-left: 3px;
+  font-weight: lighter;
+  font-size: 12px;
+  color: #55545A;
+  line-height: 130%;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 100px;
 }

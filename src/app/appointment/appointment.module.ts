@@ -4,16 +4,20 @@ import { CommonModule } from '@angular/common';
 import { AppointmentRoutingModule } from './appointment-routing.module';
 import { AppointmentComponent } from './appointment.component';
 
-import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
-  declarations: [
-    AppointmentComponent
-  ],
+  declarations: [AppointmentComponent],
   imports: [
     CommonModule,
     AppointmentRoutingModule,
-    CalendarModule
-  ]
+    MatRadioModule,
+    MatProgressBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
 })
-export class AppointmentModule { }
+export class AppointmentModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 @Component({
@@ -13,12 +13,11 @@ import { Router } from '@angular/router';
       ]),
     ]),
   ],
+  encapsulation:ViewEncapsulation.None
 })
 export class AppointmentComponent implements OnInit {
-  today: Date = new Date();
   minDate = new Date();
   maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
-  dateValue: Object = new Date();
   
   showStep1: boolean = true;
   showStep2: boolean = false;
@@ -106,12 +105,14 @@ export class AppointmentComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  setDate(event: any){
-    console.log(event);
-    // console.log(this.dateValue);
-  }
-
   onSelect(event: any) {
     console.log(event);
   }
+
+  myFilter = (d: Date): boolean => {
+    const day = d.getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+  }
+
 }
