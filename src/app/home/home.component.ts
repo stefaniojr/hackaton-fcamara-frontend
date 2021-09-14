@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class HomeComponent implements OnInit {
-  onOnBoarding = true;
+  onOnBoarding = false;
   onBoarding1 = true;
   onBoarding2 = false;
   onBoarding3 = false;
@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
 
   goAppointment() {
     this.router.navigate(['/appointment']);
+  }
+
+  goListAppointments() {
+    this.router.navigate(['/list']);
   }
 
   goOnBoarding1() {
