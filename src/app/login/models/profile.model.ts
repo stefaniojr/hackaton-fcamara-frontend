@@ -4,6 +4,7 @@ export class Profile {
     public id: string,
     public nome: string,
     public email: string,
-    public message: string
+    public message: string,
+    public primeiro_acesso: boolean
   ) {}
 }

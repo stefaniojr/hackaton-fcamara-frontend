@@ -6,17 +6,18 @@
                 <div class="acesse-text">
                     <span>Acesse o sistema de<br>agendamento.</span>
                 </div>
-                <form class="form-wrapper">
+                <form class="form-wrapper" [formGroup]="form" (ngSubmit)="onLogin()">
                     <div>
-                        <input placeholder="E-mail" type="email" autofocus>
+                        <input type="email" placeholder="Email" formControlName="email" required autofocus>
                     </div>
                     <div>
-                        <input placeholder="Senha" [type]="showPassword ? 'text' : 'password'"> <img
+                        <input type="senha" placeholder="Senha" formControlName="senha"
+                        required [type]="showPassword ? 'text' : 'password'"> <img
                             [src]="showPassword ? './../../assets/show-icon.svg' : './../../assets/hidden-icon.svg'"
                             alt="" (click)="changeInputType()"
                             style="cursor: pointer; margin-left: -35px; -webkit-tap-highlight-color: transparent;">
                     </div>
-                    <button (click)="goHome()">Acessar</button>
+                    <button type="submit" [disabled]="!form.valid || !form.dirty">Acessar</button>
                 </form>
             </div>
         </div>

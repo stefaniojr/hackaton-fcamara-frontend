@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { plainToClass } from "class-transformer";
 import { ClassConstructor } from "class-transformer";
+import { Profile } from './../login/models/profile.model';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,8 @@ export class ApiService {
     data: any,
     model: ClassConstructor<T>
   ): Promise<any> {
-    const res = await this.http.post(this.buildURL(endpoint), data).toPromise();
+    const res = await this.http.post(this.buildURL(endpoint), data, {}).toPromise();
+    console.log(res);
     if (typeof (model as any).toClass === "function") {
       return (model as any).toClass(res as any);
     } else {
@@ -109,7 +111,20 @@ export class ApiService {
    * Concatena a URL base da configuração
    */
   protected getBaseURL(): string {
-    let baseURL = "http://localhost/";
+    let baseURL = "http://localhost/fcamara/api/";
     return baseURL;
   }
+
+    /**
+   * Método para realizar login
+   * @param email do usuário
+   * @param password senha
+   */
+     public async login(email: string, password: string): Promise<any> {
+      return await this.makePost(
+        ApiService.LOGIN_URL,
+        { email, password },
+        Profile
+      );
+    }
 }
