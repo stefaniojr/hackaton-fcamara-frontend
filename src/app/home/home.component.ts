@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class HomeComponent implements OnInit {
-  onOnBoarding = true;
+  onOnBoarding = false;
   onBoarding1 = true;
   onBoarding2 = false;
   onBoarding3 = false;

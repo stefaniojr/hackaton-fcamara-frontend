@@ -7,14 +7,12 @@
 
 .logo-img {
   display: block;
-  margin-bottom: 95px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .welcome-text {
   text-align: center;
-  margin-bottom: 23px;
 
   span {
     color: #000;
@@ -30,21 +28,24 @@
   color: #fff;
   height: 82px;
   line-height: 120%;
-  margin-bottom: 16px;
   text-align: left;
   padding-left: 25px;
 }
 
 .ver-agendamentos-btn {
-  background: url("./../../assets/first-btn.svg") no-repeat scroll 0 0
-    transparent;
-  background-size: cover;
+  background-color: #FE4400;
+}
+
+.ver-agendamentos-btn:hover {
+  background-color: #D03800;
 }
 
 .agendar-btn {
-  background: url("./../../assets/second-btn.svg") no-repeat scroll 0 0
-    transparent;
-  background-size: cover;
+  background-color: #3E3E9D;
+}
+
+.agendar-btn:hover {
+  background-color: #333380;
 }
 
 .onboarding-wrapper-wrapper {
@@ -107,9 +108,11 @@
   line-height: 120%;
 }
 
+.pode-deixar-btn:hover{
+  background-color: #D03800;
+}
+
 .protocolo-wrapper {
-  margin-top: 15px;
-  margin-bottom: 19px;
   a {
     text-decoration: none;
     color: #fe4400;
@@ -120,5 +123,58 @@
   img {
     width: 15px;
     color: #fe4400;
+  }
+}
+
+@media screen and (max-width: 568px){
+  .header {
+    margin-bottom: 9vh;
+  }
+
+  .logo-img {
+    margin-bottom: 11vh;
+  }
+
+  .welcome-text{
+    margin-bottom: 3vh;
+  }
+
+  .home-btn{
+    margin-bottom: 1.5vh;
+  }
+
+  .protocolo-wrapper{
+    a,img{
+      margin-top: 1.5vh;
+      margin-bottom: 1.5vh;
+    }
+    
+  }
+  
+}
+
+
+@media screen and (min-width: 568px){
+  .header {
+    margin-bottom: 6vh;
+  }
+
+  .logo-img {
+    margin-bottom: 6.5vh;
+  }
+
+  .welcome-text{
+    margin-bottom: 3vh;
+  }
+
+  .home-btn{
+    margin-bottom: 1.2vh;
+  }
+
+  .protocolo-wrapper{
+    a,img{
+      margin-bottom: 3vh;
+    }
+    
   }
 }

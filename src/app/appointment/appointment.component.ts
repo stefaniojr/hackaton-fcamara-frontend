@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
@@ -13,12 +16,13 @@ import { Router } from '@angular/router';
       ]),
     ]),
   ],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppointmentComponent implements OnInit {
+  form: FormGroup; // define um formulário a ser usado para login.
   minDate = new Date();
   maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
-  
+
   showStep1: boolean = true;
   showStep2: boolean = false;
   showStep3: boolean = false;
@@ -27,9 +31,21 @@ export class AppointmentComponent implements OnInit {
   selected: boolean = false;
   invitedFriends: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    public datepipe: DatePipe
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // inicia fiels dos formulários.
+    this.form = this.fb.group({
+      id_funcionario: [''],
+      data: [''],
+      turno: [''],
+      local: [''],
+    });
+  }
 
   goForward() {
     if (this.showStep1) {
@@ -105,14 +121,28 @@ export class AppointmentComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  onSelect(event: any) {
-    console.log(event);
+  setDate(event: any) {
+    let data =this.datepipe.transform(event, 'dd/MM/yyyy');
+    this.form.controls['data'].setValue(data);
   }
 
   myFilter = (d: Date): boolean => {
     const day = d.getDay();
     // Prevent Saturday and Sunday from being selected.
     return day !== 0 && day !== 6;
+  };
+
+  setSP() {
+    this.form.controls['local'].setValue('SP');
+    this.goForward();
   }
 
+  setSantos() {
+    this.form.controls['local'].setValue('Santos');
+    this.goForward();
+  }
+
+  setTurno(turno: string) {
+    this.form.controls['turno'].setValue(turno);
+  }
 }

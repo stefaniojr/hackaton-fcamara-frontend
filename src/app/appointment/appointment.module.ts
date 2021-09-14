@@ -8,6 +8,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppointmentComponent],
@@ -18,6 +20,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatProgressBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
+  providers: [DatePipe],
 })
 export class AppointmentModule {}

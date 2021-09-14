@@ -25,7 +25,7 @@ export class ApiService {
     data: any,
     model: ClassConstructor<T>
   ): Promise<any> {
-    const res = await this.http.post(this.buildURL(endpoint), data, {}).toPromise();
+    const res = await this.http.post(this.buildURL(endpoint), data).toPromise();
     console.log(res);
     if (typeof (model as any).toClass === "function") {
       return (model as any).toClass(res as any);
@@ -121,9 +121,13 @@ export class ApiService {
    * @param password senha
    */
      public async login(email: string, password: string): Promise<any> {
+      var form_data = new FormData();
+      form_data.append("email", email);
+      form_data.append("senha", password);
+      
       return await this.makePost(
         ApiService.LOGIN_URL,
-        { email, password },
+        form_data,
         Profile
       );
     }

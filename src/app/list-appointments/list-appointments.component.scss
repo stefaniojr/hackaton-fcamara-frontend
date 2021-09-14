@@ -1,6 +1,5 @@
 header {
   padding: 0;
-  margin-bottom: 48px;
   img {
     cursor: pointer;
   }
@@ -10,7 +9,6 @@ header {
 }
 
 .list-titulo {
-  margin-bottom: 32px;
   font-size: 24px;
   line-height: 120%;
   color: #000;
@@ -19,7 +17,6 @@ header {
 }
 
 .fixed-list {
-  height: 400px;
   overflow: auto;
   margin-left: 30px;
   margin-right: 30px;
@@ -28,7 +25,6 @@ header {
 .custom-card {
   background: #f7f7fd;
   border-radius: 16px;
-  margin-bottom: 15px;
 }
 
 .text-card {
@@ -46,4 +42,69 @@ header {
 .icon-wrapper {
   margin-top: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 568px) {
+  header {
+    margin-bottom: 5vh;
+  }
+
+  .fixed-list {
+    height: 77vh;
+  }
+
+  .list-titulo {
+    margin-bottom: 4vh;
+  }
+
+  .custom-card {
+    margin-bottom: 2vh;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  header {
+    margin-bottom: 3vh;
+  }
+
+  .fixed-list {
+    height: 50vh;
+  }
+
+  .list-titulo {
+    margin-bottom: 2vh;
+  }
+
+  .custom-card {
+    margin-bottom: 1.5vh;
+  }
+}
+
+.fixed-list img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0);
+  }
 }

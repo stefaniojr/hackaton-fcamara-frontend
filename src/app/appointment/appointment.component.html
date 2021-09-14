@@ -18,29 +18,30 @@
                         <div class="step-titulo">
                             E em qual escritório você<br>vai trabalhar?
                         </div>
-                        <button class="option1-btn" (click)="goForward()">Santos</button>
-                        <button class="option2-btn" (click)="goForward()">São Paulo</button>
+                        <button class="option1-btn" (click)="setSantos()">Santos</button>
+                        <button class="option2-btn" (click)="setSP()">São Paulo</button>
                         <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img">
                     </div>
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-titulo">
-                           Em qual dia?
+                            Em qual dia?
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-12 m-2">
                                 <mat-calendar [dateFilter]="myFilter" #picker [minDate]="minDate" [maxDate]="maxDate"
-                                (selectedChange)="onSelect($event)"></mat-calendar>
-                            </div>  
+                                    (selectedChange)="setDate($event)"></mat-calendar>   
+                            </div>
                         </div>
                         <div class="step-titulo">
                             Em qual período?
                         </div>
+
                         <mat-radio-group class="radio-group">
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="M">
+                                    <mat-radio-button class="radio-button" value="M" (click)="setTurno('M')">
                                         <div class="turno-text">Manhã</div>
-                                        <div class="detail-text">8h - 12h</div>
+                                        <div class="detail-text">8h - 13h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
@@ -53,9 +54,9 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="T">
+                                    <mat-radio-button class="radio-button" value="T" (click)="setTurno('T')">
                                         <div class="turno-text">Tarde</div>
-                                        <div class="detail-text">12 - 18h</div>
+                                        <div class="detail-text">13h - 18h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
@@ -68,7 +69,7 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="A">
+                                    <mat-radio-button class="radio-button" value="A" (click)="setTurno('A')">
                                         <div class="turno-text">Ambos</div>
                                         <div class="detail-text">8h - 18h</div>
                                     </mat-radio-button>
@@ -81,7 +82,7 @@
                                 </div>
                             </div>
                         </mat-radio-group>
-                        <button (click)="goForward()">Agendar</button>
+                        <button (click)="goForward()" [disabled]="!form.value.turno || !form.value.data">Agendar</button>
                         <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img">
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
@@ -160,10 +161,10 @@
         <div class="row justify-content-center" *ngIf="showFinish" [@enterAnimation]>
             <div class="col-10 p-0 m-0">
                 <div class="step-titulo" *ngIf="!invitedFriends">Tudo certo com seu<br>agendamento,
-                        Fulano(a).
+                    Fulano(a).
                 </div>
                 <div class="step-titulo" *ngIf="invitedFriends">Prontinho, Fulano(a). Já<br>enviamos os
-                        convites.
+                    convites.
                 </div>
                 <div class="step-instructions">
                     Lembra de manter a distância dos<br>colegas e de usar a máscara o<br>tempo todo, ok?

@@ -54,6 +54,16 @@ button {
   margin-bottom: 16px;
 }
 
+button:hover{
+  background: #D03800;
+}
+
+button:disabled,
+button[disabled]{
+  opacity: 0.5; 
+  cursor: not-allowed;
+}
+
 .option1-btn {
   background: #3e3e9d;
   background-size: cover;
@@ -67,6 +77,15 @@ button {
   text-align: left;
   padding-left: 25px;
 }
+
+.option1-btn:hover{
+  background-color: #333380;
+}
+
+.option2-btn:hover{
+  background-color: #D03800;
+}
+
 
 .protocolo-wrapper {
   margin-bottom: 19px;
@@ -112,26 +131,6 @@ button {
   height: 430px;
   overflow: auto;
   margin-bottom: 32px;
-}
-
-.demo-inline-calendar-card {
-  width: 300px;
-}
-
-input[type="radio"] {
-  //-webkit-appearance: none;
-  //-moz-appearance: none;
-  //  appearance: none;
-
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  background-color: #fe4400;
-  transition: 0.2s all linear;
-}
-
-input[type="radio"]:checked {
-  border: 6px solid black;
 }
 
 .radio-group {
