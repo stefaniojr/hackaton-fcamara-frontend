@@ -95,8 +95,8 @@
         <div class="row justify-content-center align-items-center"> 
             <div class="col-10">
                 <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
-                <div class="welcome-text">
-                    <span>Olá, Fulano(a).<br>O que você quer fazer?</span>
+                <div class="welcome-text" *ngIf="name">
+                    <span>Olá, {{name | firstName}}.<br>O que você quer fazer?</span>
                 </div>
 
                 <button class="home-btn ver-agendamentos-btn" (click)="goListAppointments()">Ver agendamentos</button>

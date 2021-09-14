@@ -29,11 +29,13 @@ export class HomeComponent implements OnInit {
   onBoarding1 = true;
   onBoarding2 = false;
   onBoarding3 = false;
+  name: string = undefined;
 
   constructor(private router: Router, private auth: AuthService, private storage: StorageService) {}
 
-  ngOnInit(): void {
-    // this.storage.get();
+  async ngOnInit() {
+    const profile = await this.storage.get("profile");
+    this.name = JSON.parse(profile).nome;
   }
 
   goAppointment() {
