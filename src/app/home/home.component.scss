@@ -1,9 +1,9 @@
 .logo-img {
-    display: block;
-    margin-bottom: 95px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: block;
+  margin-bottom: 95px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .welcome-text {
   text-align: center;
@@ -17,23 +17,101 @@
   }
 }
 
-button {
-    font-size: 20px;
-    font-weight: 400;
-    color: #fff;
-    height: 82px;
-    line-height: 120%;
-    margin-bottom: 16px;
-    text-align: left;
-    padding-left: 25px;
-  }
-
-.ver-agendamentos-btn{
-    background: url('./../../assets/first-btn.svg') no-repeat scroll 0 0 transparent;
-    background-size:cover;
+.home-btn {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  height: 82px;
+  line-height: 120%;
+  margin-bottom: 16px;
+  text-align: left;
+  padding-left: 25px;
 }
 
-.agendar-btn{
-    background: url('./../../assets/second-btn.svg') no-repeat scroll 0 0 transparent;
-    background-size:cover;
+.ver-agendamentos-btn {
+  background: url("./../../assets/first-btn.svg") no-repeat scroll 0 0
+    transparent;
+  background-size: cover;
+}
+
+.agendar-btn {
+  background: url("./../../assets/second-btn.svg") no-repeat scroll 0 0
+    transparent;
+  background-size: cover;
+}
+
+.onboarding-wrapper-wrapper {
+  margin-bottom: 54px;
+}
+
+.onboarding-img {
+  width: 100%;
+  @media screen and (min-width: 568px) {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+.onboarding-icon {
+  width: 45px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.onboarding-titulo {
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 120%;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.onboarding-instructions {
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 10px;
+
+  span{
+    color: #fe4400;
+  }
+}
+
+.arrow-left-animate:hover{
+  cursor: pointer;
+  transform: translate(-5px, 0px);
+  transition: transform 400ms ease;
+}
+
+.arrow-right-animate:hover{
+  cursor: pointer;
+  transform: translate(5px, 0px);
+  transition: transform 400ms ease;
+}
+
+.pode-deixar-btn {
+  background-color: #fe4400;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  height: 64px;
+  line-height: 120%;
+}
+
+.protocolo-wrapper {
+  margin-top: 15px;
+  margin-bottom: 19px;
+  a {
+    text-decoration: none;
+    color: #fe4400;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 15px;
+    color: #fe4400;
+  }
 }

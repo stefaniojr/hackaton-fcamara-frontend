@@ -15,16 +15,16 @@
                 <div *ngIf="true">
                     <div class="step-1" *ngIf="showStep1" [@enterAnimation]>
                         <img src="./../../assets/person-location.svg" alt="" class="step-img">
-                        <div class="step-text">
-                            <span>E em qual escritório você<br>vai trabalhar?</span>
+                        <div class="step-titulo">
+                            E em qual escritório você<br>vai trabalhar?
                         </div>
                         <button class="option1-btn" (click)="goForward()">Santos</button>
                         <button class="option2-btn" (click)="goForward()">São Paulo</button>
                         <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img">
                     </div>
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
-                        <div class="step-text">
-                            <span>Em qual dia?</span>
+                        <div class="step-titulo">
+                           Em qual dia?
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-12 m-2">
@@ -32,8 +32,8 @@
                                 (selectedChange)="onSelect($event)"></mat-calendar>
                             </div>  
                         </div>
-                        <div class="step-text m-4">
-                            <span>Em qual período?</span>
+                        <div class="step-titulo">
+                            Em qual período?
                         </div>
                         <mat-radio-group class="radio-group">
                             <div class="row justify-content-center align-items-center mb-3">
@@ -86,16 +86,16 @@
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" alt="" class="step-img">
-                        <div class="step-text">
-                            <span>Fulano(a), você quer<br>convidar alguém?</span>
+                        <div class="step-titulo">
+                            Fulano(a), você quer<br>convidar alguém?
                         </div>
                         <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
                         <button class="option2-btn" (click)="goForward()">Quero sim</button>
                         <img src="./../../assets/appointment-step-3.svg" alt="" class="step-img">
                     </div>
                     <div class="step-4" *ngIf="showStep4" [@enterAnimation]>
-                        <div class="step-text">
-                            <span>#SangueLaranja</span>
+                        <div class="step-titulo">
+                            #SangueLaranja
                         </div>
                         <div class="fixed-list">
                             <div class="person-card" (click)="onSelectCard()"
@@ -159,15 +159,17 @@
         </div>
         <div class="row justify-content-center" *ngIf="showFinish" [@enterAnimation]>
             <div class="col-10 p-0 m-0">
-                <div class="step-text" *ngIf="!invitedFriends"><span>Tudo certo com seu<br>agendamento,
-                        Fulano(a).</span>
+                <div class="step-titulo" *ngIf="!invitedFriends">Tudo certo com seu<br>agendamento,
+                        Fulano(a).
                 </div>
-                <div class="step-text" *ngIf="invitedFriends"><span>Prontinho, Fulano(a). Já<br>enviamos os
-                        convites.</span>
-                    <p>Lembra de manter a distância dos colegas e de usar a máscara o tempo todo, ok?</p>
+                <div class="step-titulo" *ngIf="invitedFriends">Prontinho, Fulano(a). Já<br>enviamos os
+                        convites.
+                </div>
+                <div class="step-instructions">
+                    Lembra de manter a distância dos<br>colegas e de usar a máscara o<br>tempo todo, ok?
                 </div>
                 <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
-                    <a href="https://pt.slideshare.net/FCamara_Consultoria?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview"
+                    <a href="https://www.slideshare.net/FCamara_Consultoria/plano-de-retomada-fcamara"
                         target="_blank">Acesse os protocolos de segurança</a>
                     <img src="./../../assets/right-arrow.svg" alt="">
                 </div>

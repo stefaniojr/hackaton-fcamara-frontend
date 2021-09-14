@@ -28,23 +28,21 @@ header {
   }
 }
 
-.step-text {
+.step-titulo {
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 120%;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 16px;
+}
 
-  span {
-    color: #000;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 120%;
-    margin-bottom: 24px;
-  }
-
-  p {
-    color: #000;
-    font-size: 18px;
-    line-height: 130%;
-  }
+.step-instructions {
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 10px;
 }
 
 button {
@@ -129,9 +127,8 @@ input[type="radio"] {
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  background-color: #FE4400;
+  background-color: #fe4400;
   transition: 0.2s all linear;
-
 }
 
 input[type="radio"]:checked {
@@ -148,17 +145,17 @@ input[type="radio"]:checked {
   margin: 5px;
 }
 
-.turno-text{
+.turno-text {
   margin-left: 3px;
   font-size: 16px;
   line-height: 130%;
 }
 
-.detail-text{
+.detail-text {
   margin-left: 3px;
   font-weight: lighter;
   font-size: 12px;
-  color: #55545A;
+  color: #55545a;
   line-height: 130%;
 }
 
