@@ -10,7 +10,7 @@ export class GetTurnoText implements PipeTransform {
     } else if (value === 'T') {
       return 'Tarde';
     } else if (value === 'A'){
-      return 'Ambos';
+      return 'Manhã e Tarde';
     }
     return '';
   }

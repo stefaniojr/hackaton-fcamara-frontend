@@ -118,7 +118,6 @@ export class ApiService {
    * Concatena a URL base da configuração
    */
   protected getBaseURL(): string {
-    //let baseURL = 'http://localhost/fcamara/api/';
     let baseURL = 'https://fcalendar.anagabatteli.com/api/';
     return baseURL;
   }
