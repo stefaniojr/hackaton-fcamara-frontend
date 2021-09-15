@@ -37,7 +37,7 @@ export class AppointmentComponent implements OnInit {
   funcionarios: Funcionario[];
   emails: string[] = [];
   id: string;
-  profile: any;
+  nome: string;
 
   dataFiltro: Filtro;
 
@@ -51,8 +51,9 @@ export class AppointmentComponent implements OnInit {
 
   async ngOnInit() {
     this.funcionarios = await this.obterFuncionarios();
-    this.profile = await this.storage.get('profile');
-    this.id = JSON.parse(this.profile).id;
+    const profile = await this.storage.get('profile');
+    this.id = JSON.parse(profile).id;
+    this.nome = JSON.parse(profile).nome;
     // inicia fiels dos formulários.
     this.form = this.fb.group({
       id_funcionario: this.id,
@@ -134,8 +135,9 @@ export class AppointmentComponent implements OnInit {
     if (invited) {
       await this.api.inviteFriends(
         this.emails.join(),
-        this.profile.nome,
-        this.form.value.data
+        this.nome,
+        this.form.value.data,
+        this.form.value.turno
       );
     }
 

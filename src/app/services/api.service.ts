@@ -20,9 +20,9 @@ export class ApiService {
   public static AGENDAMENTOS_URL = 'agendamentos/';
   public static AGENDAR_URL = 'agendamentos/novo/';
   public static DELETAR_URL = 'agendamentos/delete/';
-  public static FILTRAR_URL = 'calendario/filtro/';
+  public static FILTRAR_URL = 'Calendario/Filtro/';
   public static FUNCIONARIOS_URL = 'funcionarios/';
-  public static EMAIL_URL = 'email/';
+  public static EMAIL_URL = 'Email/';
 
   /**
    * Realiza uma requisição do tipo POST
@@ -201,11 +201,12 @@ export class ApiService {
   /**
    * Método para recuperar os funcionários da FCamara
    */
-   public async inviteFriends(emails: string, funcionario: string, data: string): Promise<any> {
+   public async inviteFriends(emails: string, funcionario: string, data: string, turno: string): Promise<any> {
     var form_data = new FormData();
     form_data.append('emails', emails);
     form_data.append('funcionario', funcionario);
     form_data.append('data', data);
+    form_data.append('turno', turno);
     return await this.makePost(ApiService.EMAIL_URL, form_data, FormData);
   }
 }
