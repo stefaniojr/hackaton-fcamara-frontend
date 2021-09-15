@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     const profile = await this.storage.get("profile");
-    this.onOnBoarding = profile.primeiro_acesso;
+    this.onOnBoarding = JSON.parse(profile).primeiro_acesso;
     this.name = JSON.parse(profile).nome;
   }
 
