@@ -132,6 +132,8 @@ export class AppointmentComponent implements OnInit {
     this.showFinish = true;
     this.invitedFriends = invited;
 
+    this.submitAgendamento();
+
     if (invited) {
       await this.api.inviteFriends(
         this.emails.join(),
@@ -140,8 +142,6 @@ export class AppointmentComponent implements OnInit {
         this.form.value.turno
       );
     }
-
-    this.submitAgendamento();
   }
 
   goHome() {
