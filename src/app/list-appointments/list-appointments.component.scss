@@ -8,6 +8,11 @@ header {
   }
 }
 
+.back-button-animate:hover{
+  transform: translate(-5px, 0px);
+  transition: transform 400ms ease;
+}
+
 .list-titulo {
   font-size: 24px;
   line-height: 120%;
@@ -18,8 +23,8 @@ header {
 
 .fixed-list {
   overflow: auto;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .custom-card {
@@ -80,7 +85,7 @@ header {
   }
 }
 
-.fixed-list img:hover {
+.trash-icon:hover {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 0.5s;
 

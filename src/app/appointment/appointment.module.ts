@@ -10,6 +10,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   declarations: [AppointmentComponent],
@@ -22,6 +23,7 @@ import { DatePipe } from '@angular/common';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    PipesModule
   ],
   providers: [DatePipe],
 })

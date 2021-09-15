@@ -3,6 +3,10 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { StorageService } from '../services/storage.service';
+import { ApiService } from '../services/api.service';
+import { Filtro } from './models/filtro.model';
+import { Funcionario } from './models/funcionario.model';
 
 @Component({
   selector: 'app-appointment',
@@ -30,21 +34,37 @@ export class AppointmentComponent implements OnInit {
   showFinish: boolean = false;
   selected: boolean = false;
   invitedFriends: boolean = false;
+  funcionarios: Funcionario[];
+  emails: string[] = [];
+  id: string;
+  profile: any;
+
+  dataFiltro: Filtro;
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    public datepipe: DatePipe
+    public datepipe: DatePipe,
+    private storage: StorageService,
+    private api: ApiService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.funcionarios = await this.obterFuncionarios();
+    this.profile = await this.storage.get('profile');
+    console.log('perfil', this.profile);
+    this.id = JSON.parse(this.profile).id;
     // inicia fiels dos formulários.
     this.form = this.fb.group({
-      id_funcionario: [''],
+      id_funcionario: this.id,
       data: [''],
       turno: [''],
       local: [''],
     });
+  }
+
+  async obterFuncionarios() {
+    return await this.api.getFuncionarios();
   }
 
   goForward() {
@@ -104,26 +124,31 @@ export class AppointmentComponent implements OnInit {
     }
   }
 
-  onSelectCard() {
-    this.selected = !this.selected;
-  }
-
-  finishAppointment(invited: boolean) {
+  async finishAppointment(invited: boolean) {
     this.showStep1 = false;
     this.showStep2 = false;
     this.showStep3 = false;
     this.showStep4 = false;
     this.showFinish = true;
     this.invitedFriends = invited;
+
+    if(invited){
+     const res = await this.api.inviteFriends(this.emails.join(), this.profile.nome, this.form.value.data);
+     console.log(res);
+    }
+
+    this.submitAgendamento();
   }
 
   goHome() {
     this.router.navigate(['/']);
   }
 
-  setDate(event: any) {
-    let data =this.datepipe.transform(event, 'dd/MM/yyyy');
+  async setDate(event: any) {
+    let data = this.datepipe.transform(event, 'dd/MM/yyyy');
     this.form.controls['data'].setValue(data);
+    this.form.controls['turno'].setValue('');
+    this.dataFiltro = await this.api.filtrarData(data, this.form.value.local);
   }
 
   myFilter = (d: Date): boolean => {
@@ -134,15 +159,69 @@ export class AppointmentComponent implements OnInit {
 
   setSP() {
     this.form.controls['local'].setValue('SP');
+    this.dataFiltro = undefined;
     this.goForward();
   }
 
   setSantos() {
     this.form.controls['local'].setValue('Santos');
+    this.dataFiltro = undefined;
     this.goForward();
   }
 
   setTurno(turno: string) {
     this.form.controls['turno'].setValue(turno);
+  }
+
+  async submitAgendamento() {
+    if (this.form.value.turno === 'A') {
+      try {
+        await this.api.agendar(
+          this.form.value.id_funcionario,
+          this.form.value.data,
+          'M',
+          this.form.value.local
+        );
+
+        await this.api.agendar(
+          this.form.value.id_funcionario,
+          this.form.value.data,
+          'T',
+          this.form.value.local
+        );
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        await this.api.agendar(
+          this.form.value.id_funcionario,
+          this.form.value.data,
+          this.form.value.turno,
+          this.form.value.local
+        );
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+
+  addOrRemoveEmail(funcionario: Funcionario) {
+    //colocar condicional de tamanho
+    if (this.emails.includes(funcionario.email)) {
+      this.emails = this.arrayRemove(this.emails, funcionario.email);
+      funcionario.selected = false;
+    } else {
+      if (this.emails.length <= 10) {
+        this.emails.push(funcionario.email);
+        funcionario.selected = true;
+      }
+    }
+  }
+
+  arrayRemove(arr: string[], value: string) {
+    return arr.filter(function (r) {
+      return r != value;
+    });
   }
 }

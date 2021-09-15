@@ -9,6 +9,19 @@ header {
   }
 }
 
+.back-button-animate:hover{
+  transform: translate(-5px, 0px);
+  transition: transform 400ms ease;
+}
+
+.close-button-animate{
+  transition: transform .7s ease-in-out;
+}
+
+.close-button-animate:hover{
+  transform: rotate(360deg);
+}
+
 .step-img {
   display: block;
   margin-top: 26px;

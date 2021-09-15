@@ -3,10 +3,10 @@
         <header *ngIf="!showFinish">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="p-2">
-                    <img src="./../../assets/back-button.svg" alt="" (click)="goBack()">
+                    <img src="./../../assets/back-button.svg" alt="" (click)="goBack()" class="back-button-animate">
                 </div>
                 <div class="p-2">
-                    <img src="./../../assets/close-button.svg" alt="" (click)="goHome()">
+                    <img src="./../../assets/close-button.svg" alt="" (click)="goHome()" class="close-button-animate">
                 </div>
             </div>
         </header>
@@ -32,21 +32,24 @@
                                     (selectedChange)="setDate($event)"></mat-calendar>   
                             </div>
                         </div>
-                        <div class="step-titulo">
+                        <div *ngIf="this.form.value.data" class="d-flex  justify-content-center align-items-center mb-5">
+                            Data selecionada: {{this.form.value.data}}
+                        </div>
+                        <div class="step-titulo" *ngIf="dataFiltro">
                             Em qual período?
                         </div>
 
-                        <mat-radio-group class="radio-group">
+                        <mat-radio-group class="radio-group" *ngIf="dataFiltro">
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="M" (click)="setTurno('M')">
+                                    <mat-radio-button class="radio-button" value="M" (click)="setTurno('M')" [checked]="form.value.turno == 'M'">
                                         <div class="turno-text">Manhã</div>
                                         <div class="detail-text">8h - 13h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
-                                    <div class="detail-text float-end">25%</div>
-                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Manha*100}}%</div>
+                                    <mat-progress-bar mode="determinate"  [value]="dataFiltro?.Capacidade_Usada_Manha*100" class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -54,14 +57,14 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="T" (click)="setTurno('T')">
+                                    <mat-radio-button class="radio-button" value="T" (click)="setTurno('T')" [checked]="form.value.turno == 'T'">
                                         <div class="turno-text">Tarde</div>
                                         <div class="detail-text">13h - 18h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
-                                    <div class="detail-text float-end">25%</div>
-                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Tarde*100}}%</div>
+                                    <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Usada_Tarde*100" class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -69,14 +72,14 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="A" (click)="setTurno('A')">
+                                    <mat-radio-button class="radio-button" value="A" (click)="setTurno('A')" [checked]="form.value.turno == 'A'">
                                         <div class="turno-text">Ambos</div>
                                         <div class="detail-text">8h - 18h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
-                                    <div class="detail-text float-end">25%</div>
-                                    <mat-progress-bar mode="determinate" value="40" class="w-100 m-1">
+                                    <div class="detail-text float-end">{{dataFiltro?.Capacidade_Ambos*100}}%</div>
+                                    <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Ambos*100" class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -98,58 +101,17 @@
                         <div class="step-titulo">
                             #SangueLaranja
                         </div>
+                        <div class="step-titulo">
+                            {{emails.length}}/10
+                        </div>
                         <div class="fixed-list">
-                            <div class="person-card" (click)="onSelectCard()"
-                                [ngClass]="{'person-card-selected': selected} ">
-                                <img src="./../../assets/avatars/ana.jpg" alt="">
-                                <span>Ana Luíza Gabatteli</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/matheus.jpg" alt="">
-                                <span>Matheus Honorato</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/natan.jpg" alt="">
-                                <span>Natã Menezes</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/jr.jpg" alt="">
-                                <span>Stefânio Soares Junior</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/ana.jpg" alt="">
-                                <span>Ana Luíza Gabatteli</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/matheus.jpg" alt="">
-                                <span>Matheus Honorato</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/natan.jpg" alt="">
-                                <span>Natã Menezes</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/jr.jpg" alt="">
-                                <span>Stefânio Soares Junior</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/ana.jpg" alt="">
-                                <span>Ana Luíza Gabatteli</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/matheus.jpg" alt="">
-                                <span>Matheus Honorato</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/natan.jpg" alt="">
-                                <span>Natã Menezes</span>
-                            </div>
-                            <div class="person-card">
-                                <img src="./../../assets/avatars/jr.jpg" alt="">
-                                <span>Stefânio Soares Junior</span>
+                            <div class="person-card" *ngFor="let func of funcionarios" (click)="addOrRemoveEmail(func)"
+                                [ngClass]="{'person-card-selected': func.selected}">
+                                <img [src]="'./../../assets/avatars/' + func.email + '.jpg'" alt="">
+                                <span>{{func.nome | shortName}}</span>
                             </div>
                         </div>
-                        <button (click)="finishAppointment(true)">Convidar</button>
+                        <button (click)="finishAppointment(true)" [disabled]="!emails.length">Convidar</button>
                     </div>
                 </div>
             </div>

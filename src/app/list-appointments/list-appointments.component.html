@@ -3,131 +3,31 @@
         <header>
             <div class="d-flex justify-content-between">
                 <div class="p-2">
-                    <img src="./../../assets/back-button.svg" alt="" (click)="goBack()">
+                    <img src="./../../assets/back-button.svg" alt="" (click)="goBack()" class="back-button-animate">
                 </div>
             </div>
         </header>
         <div class="list-titulo">
             Meus agendamentos
         </div>
-        <div class="fixed-list">
-            <div class="custom-card d-flex justify-content-between">
+        <div class="fixed-list" *ngIf="agendamentos">
+            <div class="custom-card d-flex justify-content-between" *ngFor="let agend of agendamentos">
                 <div class="agendamento-info-wrapper p-2">
                     <div class="text-card">
                         <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
+                        {{agend.data | dateText}}
                     </div>
                     <div class="text-card">
                         <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
+                        Turno: {{agend.turno | turnoText}}
                     </div>
                     <div class="text-card">
                         <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
+                        {{agend.estacao | SPText}}
                     </div>
                 </div>
                 <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
-                </div>
-            </div>
-
-            <div class="custom-card d-flex justify-content-between">
-                <div class="agendamento-info-wrapper p-2">
-                    <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
-                    </div>
-                </div>
-                <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
-                </div>
-            </div>
-
-            <div class="custom-card d-flex justify-content-between">
-                <div class="agendamento-info-wrapper p-2">
-                    <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
-                    </div>
-                </div>
-                <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
-                </div>
-            </div>
-
-            <div class="custom-card d-flex justify-content-between">
-                <div class="agendamento-info-wrapper p-2">
-                    <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
-                    </div>
-                </div>
-                <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
-                </div>
-            </div>
-
-            <div class="custom-card d-flex justify-content-between">
-                <div class="agendamento-info-wrapper p-2">
-                    <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
-                    </div>
-                </div>
-                <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
-                </div>
-            </div>
-
-            <div class="custom-card d-flex justify-content-between">
-                <div class="agendamento-info-wrapper p-2">
-                    <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
-                        3 de setembro de 2021
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
-                        Turno: Tarde
-                    </div>
-                    <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
-                        São Paulo
-                    </div>
-                </div>
-                <div class="icon-wrapper p-2">
-                    <img src="./../../assets/trash.svg" alt="">
+                    <img src="./../../assets/trash.svg" alt="" class="trash-icon" (click)="cancelarAgendamento(agend.id)">
                 </div>
             </div>
         </div>

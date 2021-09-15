@@ -99,6 +99,14 @@
   transition: transform 400ms ease;
 }
 
+.power-off-animate{
+  transition: transform .2s; /* Animation */
+}
+
+.power-off-animate:hover{
+  transform: scale(1.25);
+}
+
 .pode-deixar-btn {
   background-color: #fe4400;
   font-size: 20px;
