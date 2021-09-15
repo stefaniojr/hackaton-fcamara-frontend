@@ -129,13 +129,13 @@
                         <div class="step-titulo">
                             {{emails.length}}/10
                         </div>
-
-                        <div class="person-card float-start w-100" *ngFor="let func of funcionarios"
-                            (click)="addOrRemoveEmail(func)" [ngClass]="{'person-card-selected': func.selected}">
-                            <img [src]="'./../../assets/avatars/' + func.email + '.jpg'" alt="">
-                            <span>{{func.nome | shortName}}</span>
+                        <div *ngFor="let func of funcionarios">
+                            <div class="person-card float-start w-100" *ngIf="func.nome != nome"
+                                (click)="addOrRemoveEmail(func)" [ngClass]="{'person-card-selected': func.selected}">
+                                <img [src]="'./../../assets/avatars/' + func.email + '.jpg'" alt="">
+                                <span>{{func.nome | shortName}}</span>
+                            </div>
                         </div>
-
                         <button (click)="finishAppointment(true)" [disabled]="!emails.length">Convidar</button>
                     </div>
                 </div>
