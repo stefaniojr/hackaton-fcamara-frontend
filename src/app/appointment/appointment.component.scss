@@ -1,6 +1,6 @@
 header {
   padding: 0;
-  margin-bottom: 45px;
+  
   img {
     cursor: pointer;
   }
@@ -9,34 +9,31 @@ header {
   }
 }
 
-.back-button-animate:hover{
+.back-button-animate:hover {
   transform: translate(-5px, 0px);
   transition: transform 400ms ease;
 }
 
-.close-button-animate{
-  transition: transform .7s ease-in-out;
+.close-button-animate {
+  transition: transform 0.7s ease-in-out;
 }
 
-.close-button-animate:hover{
+.close-button-animate:hover {
   transform: rotate(360deg);
 }
 
 .step-img {
   display: block;
-  margin-top: 26px;
-  margin-bottom: 33px;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
   margin-left: auto;
   margin-right: auto;
 }
 
-.step-ilustration{
+.step-ilustration {
   height: 35vh;
 }
 
-.finish-wrapper {
-  margin-bottom: 54px;
-}
 
 .finish-img {
   width: 100%;
@@ -46,14 +43,24 @@ header {
 }
 
 .step-titulo {
-  font-size: 24px;
   line-height: 120%;
   color: #000;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-top: 5vh;
+  margin-bottom: 2.5vh;
   text-align: center;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  @media screen and (max-width: 568px) {
+    font-size: 3.75vh;
+    margin-top: 5vh;
+  }
+
+  @media screen and (min-width: 568px) {
+    font-size: 24px;
+    margin-top: 2vh;
+  }
 }
 
 .step-instructions {
@@ -70,16 +77,16 @@ button {
   color: #fff;
   height: 64px;
   line-height: 120%;
-  margin-bottom: 16px;
+  margin-bottom: 2.5vh;
 }
 
-button:hover{
-  background: #D03800;
+button:hover {
+  background: #d03800;
 }
 
 button:disabled,
-button[disabled]{
-  opacity: 0.5; 
+button[disabled] {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -97,14 +104,13 @@ button[disabled]{
   padding-left: 25px;
 }
 
-.option1-btn:hover{
+.option1-btn:hover {
   background-color: #333380;
 }
 
-.option2-btn:hover{
-  background-color: #D03800;
+.option2-btn:hover {
+  background-color: #d03800;
 }
-
 
 .protocolo-wrapper {
   margin-bottom: 19px;
@@ -118,6 +124,13 @@ button[disabled]{
   img {
     width: 15px;
     color: #fe4400;
+  }
+}
+
+.protocolo-wrapper:hover{
+  img{
+    transform: translate(3px, 0px);
+    transition: transform 400ms ease;
   }
 }
 

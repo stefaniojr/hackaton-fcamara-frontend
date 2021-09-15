@@ -16,9 +16,20 @@
 
   h1 {
     color: #000;
-    font-size: 24px;
     font-weight: 600;
     line-height: 120%;
+  }
+
+  @media screen and (max-width: 568px){
+    h1{
+      font-size: 3.75vh;
+    }
+  }
+
+  @media screen and (min-width: 568px){
+    h1{
+      font-size: 24px;
+    }
   }
 }
 
@@ -70,13 +81,21 @@
   }
 }
 
+.protocolo-wrapper:hover{
+  img{
+    transform: translate(3px, 0px);
+    transition: transform 400ms ease;
+  }
+}
+
 @media screen and (max-width: 568px) {
+
   .header {
-    margin-bottom: 9vh;
+    margin-bottom: 10vh;
   }
 
   .logo-img {
-    margin-bottom: 11vh;
+    margin-bottom: 12vh;
   }
 
   .welcome-text {
@@ -84,7 +103,7 @@
   }
 
   .home-btn {
-    margin-bottom: 1.5vh;
+    margin-bottom: 2vh;
   }
 
   .protocolo-wrapper {

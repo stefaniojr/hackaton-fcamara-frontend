@@ -1,20 +1,23 @@
 <div class="browser-wrapper">
-    <div class="container h-100">
+    <div class="container">
         <header *ngIf="!showFinish">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="p-2">
-                    <img src="./../../assets/back-button.svg" alt="Voltar" (click)="goBack()" class="back-button-animate">
+                    <img src="./../../assets/back-button.svg" alt="Voltar" (click)="goBack()"
+                        class="back-button-animate">
                 </div>
                 <div class="p-2">
-                    <img src="./../../assets/close-button.svg" alt="Interromper agendamento" (click)="goHome()" class="close-button-animate">
+                    <img src="./../../assets/close-button.svg" alt="Interromper agendamento" (click)="goHome()"
+                        class="close-button-animate">
                 </div>
             </div>
         </header>
-        <div class="row min-vh-100 justify-content-center align-items-center" *ngIf="!showFinish">
-            <div class="col-10 p-0">
+        <div class="row justify-content-center" *ngIf="!showFinish">
+            <div class="col-10">
                 <div *ngIf="true">
                     <div class="step-1" *ngIf="showStep1" [@enterAnimation]>
-                        <img class="step-img step-ilustration" src="./../../assets/person-location.svg" alt="Ilustração em fundo branco. À esquerda, uma mulher de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um mapa com demarcações em azul e cinza. A mulher tem pele clara, cabelos longos, ondulados, marrons e usa blusa verde clara, calça marrom e tênis azuis com solado laranja. Ela está com o braço direito ao longo do corpo enquanto olha para um celular laranja na mão esquerda, na altura do ombro. No mapa, uma seta laranja aponta para um logo dentro de um balão de dialogo, com a letra F, em branco, no centro de uma gota na cor laranja, com a ponta para cima, à direita.">
+                        <img class="step-img step-ilustration" src="./../../assets/person-location.svg"
+                            alt="Ilustração em fundo branco. À esquerda, uma mulher de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um mapa com demarcações em azul e cinza. A mulher tem pele clara, cabelos longos, ondulados, marrons e usa blusa verde clara, calça marrom e tênis azuis com solado laranja. Ela está com o braço direito ao longo do corpo enquanto olha para um celular laranja na mão esquerda, na altura do ombro. No mapa, uma seta laranja aponta para um logo dentro de um balão de dialogo, com a letra F, em branco, no centro de uma gota na cor laranja, com a ponta para cima, à direita.">
                         <div class="step-titulo">
                             E em qual escritório você vai trabalhar?
                         </div>
@@ -35,10 +38,11 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-12 m-2">
                                 <mat-calendar [dateFilter]="myFilter" #picker [minDate]="minDate" [maxDate]="maxDate"
-                                    (selectedChange)="setDate($event)"></mat-calendar>   
+                                    (selectedChange)="setDate($event)"></mat-calendar>
                             </div>
                         </div>
-                        <div *ngIf="this.form.value.data" class="d-flex  justify-content-center align-items-center mb-5">
+                        <div *ngIf="this.form.value.data"
+                            class="d-flex justify-content-center align-items-center" style="margin-bottom: 1.3vh;">
                             Data selecionada: {{this.form.value.data}}
                         </div>
                         <div class="step-titulo" *ngIf="dataFiltro">
@@ -48,14 +52,16 @@
                         <mat-radio-group class="radio-group" *ngIf="dataFiltro">
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="M" (click)="setTurno('M')" [checked]="form.value.turno == 'M'">
+                                    <mat-radio-button class="radio-button" value="M" (click)="setTurno('M')"
+                                        [checked]="form.value.turno == 'M'">
                                         <div class="turno-text">Manhã</div>
                                         <div class="detail-text">8h - 13h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Manha*100}}%</div>
-                                    <mat-progress-bar mode="determinate"  [value]="dataFiltro?.Capacidade_Usada_Manha*100" class="w-100 m-1">
+                                    <mat-progress-bar mode="determinate"
+                                        [value]="dataFiltro?.Capacidade_Usada_Manha*100" class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -63,14 +69,16 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="T" (click)="setTurno('T')" [checked]="form.value.turno == 'T'">
+                                    <mat-radio-button class="radio-button" value="T" (click)="setTurno('T')"
+                                        [checked]="form.value.turno == 'T'">
                                         <div class="turno-text">Tarde</div>
                                         <div class="detail-text">13h - 18h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Tarde*100}}%</div>
-                                    <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Usada_Tarde*100" class="w-100 m-1">
+                                    <mat-progress-bar mode="determinate"
+                                        [value]="dataFiltro?.Capacidade_Usada_Tarde*100" class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -78,30 +86,40 @@
 
                             <div class="row justify-content-center align-items-center mb-3">
                                 <div class="col-4">
-                                    <mat-radio-button class="radio-button" value="A" (click)="setTurno('A')" [checked]="form.value.turno == 'A'">
+                                    <mat-radio-button class="radio-button" value="A" (click)="setTurno('A')"
+                                        [checked]="form.value.turno == 'A'">
                                         <div class="turno-text">Ambos</div>
                                         <div class="detail-text">8h - 18h</div>
                                     </mat-radio-button>
                                 </div>
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Ambos*100}}%</div>
-                                    <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Ambos*100" class="w-100 m-1">
+                                    <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Ambos*100"
+                                        class="w-100 m-1">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
                             </div>
                         </mat-radio-group>
-                        <button (click)="goForward()" [disabled]="!form.value.turno || !form.value.data">Agendar</button>
+                        <button (click)="goForward()"
+                            [disabled]="!form.value.turno || !form.value.data">Agendar</button>
                         <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img">
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" class="step-img step-ilustration" alt="Ilustração em fundo branco. À esquerda, um homem de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um envelope azul aberto, com uma folha branca com pauta e a palavra CONVITE em laranja, no centro superior. O homem tem pele clara, cabelos curtos, lisos e marrons e usa blusa verde clara, calça marrom e sapatos azuis escuros. Ele segura uma maleta azul na altura da coxa enquanto olha para um celular laranja na mão esquerda, na altura do ombro.  Uma linha azul, tracejada faz uma curva sobre o tronco do homem e passa pela tela do celular, chagando à ponta traseira de um avião de papel azul, à direita da tela.
-                        " >
+                        ">
                         <div class="step-titulo">
                             {{nome | firstName}}, você quer convidar alguém?
                         </div>
-                        <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
-                        <button class="option2-btn" (click)="goForward()">Quero sim</button>
+                        <div *ngIf="innerWidth < 568">
+                            <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
+                            <button class="option2-btn" (click)="goForward()">Quero sim</button>
+                        </div>
+                        <div *ngIf="innerWidth >= 568">
+                            <button class="option2-btn" (click)="goForward()">Quero sim</button>
+                            <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
+                        </div>
+
                         <img src="./../../assets/appointment-step-3.svg" alt="" class="step-img">
                     </div>
                     <div class="step-4" *ngIf="showStep4" [@enterAnimation]>
@@ -124,11 +142,13 @@
             </div>
         </div>
 
-        <div class="row finish-wrapper" *ngIf="showFinish" [@enterAnimation]>
-            <img src="./../../assets/person-confirmation.svg" alt="Ilustração sobre fundo laranja claro na parte superior e branco na inferior, com 7 coronavirus azuis de diferentes tamanhos espalhados. Uma mulher em uma cadeira de rodas azul, voltada para a direita, acena para um homem em pé a sua frente. A mulher de pele clara, cabelos curtos, lisos, roxos, usa óculos de grau, blusa verde, calça cor de laranja e sapatos roxos. Ela está com o braço esquerdo levantado na direção do homem. Ele tem pele clara, cabelos longos, ondulados, marrons e usa camisa cinza escuro, calça verde clara e sapatos roxos. Entre eles, um retângulo cor de laranja, com uma seta em cada extremidade, apontando na direção da mulher e do homem. Em branco sobre o retângulo: 2 metros." class="finish-img p-0">
+        <div class="row" *ngIf="showFinish" [@enterAnimation]>
+            <img src="./../../assets/person-confirmation.svg"
+                alt="Ilustração sobre fundo laranja claro na parte superior e branco na inferior, com 7 coronavirus azuis de diferentes tamanhos espalhados. Uma mulher em uma cadeira de rodas azul, voltada para a direita, acena para um homem em pé a sua frente. A mulher de pele clara, cabelos curtos, lisos, roxos, usa óculos de grau, blusa verde, calça cor de laranja e sapatos roxos. Ela está com o braço esquerdo levantado na direção do homem. Ele tem pele clara, cabelos longos, ondulados, marrons e usa camisa cinza escuro, calça verde clara e sapatos roxos. Entre eles, um retângulo cor de laranja, com uma seta em cada extremidade, apontando na direção da mulher e do homem. Em branco sobre o retângulo: 2 metros."
+                class="finish-img p-0">
         </div>
         <div class="row justify-content-center" *ngIf="showFinish" [@enterAnimation]>
-            <div class="col-10 p-0 m-0">
+            <div class="col-10">
                 <div class="step-titulo" *ngIf="!invitedFriends">Tudo certo com seu agendamento,
                     {{nome | firstName}}.
                 </div>

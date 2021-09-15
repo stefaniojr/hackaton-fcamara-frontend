@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
 
   showPassword: boolean = false;
 
+  public innerWidth: any;
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -42,6 +44,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.innerWidth = window.innerWidth;
     // inicia fiels dos formulários.
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -107,5 +110,10 @@ export class LoginComponent implements OnInit {
     this.onBoarding2 = false;
     this.onBoarding3 = false;
     this.router.navigate(['/']);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }
