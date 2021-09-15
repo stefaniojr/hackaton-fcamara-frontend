@@ -7,7 +7,8 @@ import { StorageService } from '../services/storage.service';
 import { ApiService } from '../services/api.service';
 import { Filtro } from './models/filtro.model';
 import { Funcionario } from './models/funcionario.model';
-
+import { GetShortName }  from 'src/app/pipes/short-name.pipe';
+import { GetTurnoText }  from 'src/app/pipes/turno-text.pipe';
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
@@ -46,7 +47,9 @@ export class AppointmentComponent implements OnInit {
     private fb: FormBuilder,
     public datepipe: DatePipe,
     private storage: StorageService,
-    private api: ApiService
+    private api: ApiService,
+    public pipename: GetShortName,
+    public turnopipe: GetTurnoText
   ) {}
 
   async ngOnInit() {
@@ -137,9 +140,9 @@ export class AppointmentComponent implements OnInit {
     if (invited) {
       await this.api.inviteFriends(
         this.emails.join(),
-        this.nome,
+        this.pipename.transform(this.nome),
         this.form.value.data,
-        this.form.value.turno
+        this.turnopipe.transform(this.form.value.turno)
       );
     }
   }

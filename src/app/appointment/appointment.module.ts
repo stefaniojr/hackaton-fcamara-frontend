@@ -11,8 +11,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { GetShortName }  from 'src/app/pipes/short-name.pipe';
+import { GetTurnoText }  from 'src/app/pipes/turno-text.pipe';
 
 @NgModule({
+  providers: [GetShortName, DatePipe, GetTurnoText],
   declarations: [AppointmentComponent],
   imports: [
     CommonModule,
@@ -25,6 +28,5 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     ReactiveFormsModule,
     PipesModule
   ],
-  providers: [DatePipe],
 })
 export class AppointmentModule {}
