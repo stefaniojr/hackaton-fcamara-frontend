@@ -130,7 +130,7 @@
                             {{emails.length}}/10
                         </div>
                         <div class="fixed-list">
-                            <div class="person-card" *ngFor="let func of funcionarios" (click)="addOrRemoveEmail(func)"
+                            <div class="person-card float-start w-100" *ngFor="let func of funcionarios" (click)="addOrRemoveEmail(func)"
                                 [ngClass]="{'person-card-selected': func.selected}">
                                 <img [src]="'./../../assets/avatars/' + func.email + '.jpg'" alt="">
                                 <span>{{func.nome | shortName}}</span>
