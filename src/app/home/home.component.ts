@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
@@ -25,17 +25,19 @@ import { AuthService } from '../services/auth.service';
   ],
 })
 export class HomeComponent implements OnInit {
-  onOnBoarding = false;
-  onBoarding1 = true;
-  onBoarding2 = false;
-  onBoarding3 = false;
   name: string = undefined;
 
-  constructor(private router: Router, private auth: AuthService, private storage: StorageService) {}
+  public innerWidth: any;
+
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private storage: StorageService
+  ) {}
 
   async ngOnInit() {
-    const profile = await this.storage.get("profile");
-    this.onOnBoarding = JSON.parse(profile).primeiro_acesso;
+    this.innerWidth = window.innerWidth;
+    const profile = await this.storage.get('profile');
     this.name = JSON.parse(profile).nome;
   }
 
@@ -47,33 +49,13 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/list']);
   }
 
-  goOnBoarding1() {
-    this.onBoarding1 = true;
-    this.onBoarding2 = false;
-    this.onBoarding3 = false;
-  }
-
-  goOnBoarding2() {
-    this.onBoarding1 = false;
-    this.onBoarding2 = true;
-    this.onBoarding3 = false;
-  }
-
-  goOnBoarding3() {
-    this.onBoarding1 = false;
-    this.onBoarding2 = false;
-    this.onBoarding3 = true;
-  }
-
-  dismissOnBoarding() {
-    this.onOnBoarding = false;
-    this.onBoarding1 = false;
-    this.onBoarding2 = false;
-    this.onBoarding3 = false;
-  }
-
   public async logout() {
     // logout da aplicação.
     await this.auth.logout();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }

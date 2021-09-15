@@ -1,25 +1,116 @@
-<div class="browser-wrapper">
+<div class="browser-wrapper" *ngIf="!onOnBoarding">
     <div class="container h-100" [@fade]>
         <div class="row min-vh-100 justify-content-center align-items-center">
             <div class="col-10 p-0">
-                <img src="./../../assets/logo-fcalendar.svg" alt="" class="logo-img">
+                <img src="./../../assets/logo-fcalendar.svg"
+                    alt="Logo FCalendar. No canto esquerdo, a letra F, em branco, no centro de uma gota na cor laranja, com a ponta para cima, à direita. Sobre fundo branco, à direita da gota, a palavra Calendar, na cor laranja."
+                    class="logo-img">
                 <div class="acesse-text">
-                    <span>Acesse o sistema de<br>agendamento.</span>
+                    <h1>Acesse o sistema de</h1>
+                    <h1 style="height: 6vh;">agendamento.</h1>
                 </div>
                 <form class="form-wrapper" [formGroup]="form" (ngSubmit)="onLogin()">
                     <div>
                         <input type="email" placeholder="Email" formControlName="email" required autofocus>
                     </div>
                     <div>
-                        <input type="senha" placeholder="Senha" formControlName="senha"
-                        required [type]="showPassword ? 'text' : 'password'"> <img
+                        <input type="senha" placeholder="Senha" formControlName="senha" required
+                            [type]="showPassword ? 'text' : 'password'"> <img
                             [src]="showPassword ? './../../assets/show-icon.svg' : './../../assets/hidden-icon.svg'"
-                            alt="" (click)="changeInputType()"
+                            [alt]="showPassword ? 'Ocultar senha' : 'Exibir senha'" (click)="changeInputType()"
                             style="cursor: pointer; margin-left: -35px; -webkit-tap-highlight-color: transparent;">
                     </div>
                     <button type="submit" [disabled]="!form.valid || !form.dirty">Acessar</button>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="browser-wrapper" *ngIf="onOnBoarding">
+    <div class="container h-100" *ngIf="onBoarding1" [@enterAnimation]>
+        <div class="row onboarding-wrapper">
+            <img src="./../../assets/img-onboarding-1.svg" alt="Ilustração em fundo branco com forma arredondada à direita na cor laranja claro. No centro, uma mulher voltada para a direita, toca na tela de um grande celular com bordas e teclas em tons de azul, que está na sua frente. A mulher é branca, com cabelos longos, lisos e azuis. Ela usa blusa de manga longa verde clara, calça e sapatilhas azuis escuras. Na sua esquerda ao fundo, um grande relógio azul claro com ponteiros verdes em cima de uma mesa azul. No chão, na frente da mesa, um vaso de plantas retangular, verde claro, baixo e comprido com diferentes tipos de folhas verdes. À direita do celular, em primeiro plano, um vaso de plantas alto com três folhas grandes verdes." class="onboarding-img p-0">
+        </div>
+        <div class="row justify-content-center">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding1()">
+            <img src="./../../assets/circle.svg" alt="" class="onboarding-icon" (click)="goOnBoarding2()">
+            <img src="./../../assets/circle.svg" alt="" class="onboarding-icon" (click)="goOnBoarding2()">
+        </div>
+
+        <div class="row justify-content-center align-items-center">
+            <div class="onboarding-titulo">
+                O que você pode fazer?
+            </div>
+            <div class="onboarding-instructions">
+                Agendar sua ida ao escritório.
+            </div>
+            <div class="onboarding-instructions">
+                Ver o número de pessoas confirmadas em cada turno.
+            </div>
+            <div class="onboarding-instructions">
+                Convidar colegas para ir com você.
+            </div>
+            <div class="onboarding-instructions">
+                Cancelar agendamentos.
+            </div>
+            <div class="d-flex align-items-end flex-column p-5">
+                <img src="./../../assets/arrow-right.svg" alt="Próxima página" class="arrow-right-animate" (click)="goOnBoarding2()">
+            </div>
+        </div>
+    </div>
+
+    <div class="container h-100" *ngIf="onBoarding2" [@enterAnimation]>
+        <div class="row onboarding-wrapper">
+            <img src="./../../assets/img-onboarding-2.svg" alt="Ilustração sobre fundo laranja claro na parte superior e branco na inferior. No centro, um grande notebook com bordas e teclado azuis e a página de um site em tons de azul na tela azul claro. Ao redor da tela do notebook, três homens e uma mulher trabalham.  À esquerda, um homem em pé, voltado para a direita. Ele tem barba e cabelos marrons, amarrado em um coque, usa casaco verde, calça e tênis roxos e segura um livro verde. Sentado na borda superior, um homem de pele clara, cabelo curto, marrom, usa casaco azul, calça amarela e sapatos azuis claros. Ele tecla em um notebook vermelho apoiado no colo.  No centro, uma mulher sentada no teclado de pernas cruzadas olha para a direita. Ela tem pele clara, cabelos longos, lisos e roxos, usa uma blusa de manga longa verde, calça verde clara e sapatos roxos. Ele tecla em um notebook roxo apoiado no colo. À direita, um homem sentado em dois grandes livros, voltado à esquerda. Ele é negro, com cabelos curtos, ondulados e marrons, usa camiseta rosa e calças e sapatos roxos. Ele tecla em um notebook bege apoiado no colo." class="onboarding-img p-0">
+        </div>
+        <div class="row justify-content-center">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding1()">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding2()">
+            <img src="./../../assets/circle.svg" alt="" class="onboarding-icon" (click)="goOnBoarding3()">
+        </div>
+
+        <div class="row justify-content-center align-items-center">
+            <div class="onboarding-titulo">
+                Convide colegas
+            </div>
+            <div class="onboarding-instructions">
+                Com o FCalendar você pode<br>convidar até 10 <span>#SangueLaranja</span><br>para trabalhar com você.
+            </div>
+            <div class="onboarding-instructions">
+                Aproveite para encontrar as<br>pessoas que até hoje só conheceu<br>pelas telas.
+            </div>
+            <div class="d-flex justify-content-between p-5">
+                <img src="./../../assets/arrow-left.svg" alt="Voltar" class="arrow-left-animate" (click)="goOnBoarding1()">
+                <img src="./../../assets/arrow-right.svg" alt="Próxima página" class="arrow-right-animate" (click)="goOnBoarding3()">
+            </div>
+        </div>
+    </div>
+
+    <div class="container h-100" *ngIf="onBoarding3" [@enterAnimation]>
+        <div class="row onboarding-wrapper">
+            <img src="./../../assets/img-onboarding-3.svg" alt="Ilustração sobre fundo laranja claro na parte superior e branco na inferior. Duas mulheres com máscara de proteção, uma de frente para a outra, conversam sentadas em cadeiras giratórias azuis com rodinhas, nas extremidades de uma mesa bege retangular. As mulheres apoiam seus antebraços na mesa. A da esquerda tem pele morena, cabelos lisos e marrons até a nuca, usa blusa amarela sem manga, saia verde acima dos joelhos e sapatilhas marrons. A da direita tem pele clara, cabelos ondulados e marrons na altura da nuca, usa camisa de manga longa azul clara, calça marrom clara e sapatos marrons escuros." class="onboarding-img p-0">
+        </div>
+        <div class="row justify-content-center">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding1()">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding2()">
+            <img src="./../../assets/laranjinha.svg" alt="" class="onboarding-icon" (click)="goOnBoarding3()">
+        </div>
+
+        <div class="row justify-content-center align-items-center">
+            <div class="onboarding-titulo">
+                Flexibilidade e segurança
+            </div>
+            <div class="onboarding-instructions">
+                Você poderá escolher sua estação<br>de trabalho.
+            </div>
+            <div class="onboarding-instructions">
+                Mas contamos com você para<br>manter a distância dos colegas e<br>usar a máscara o tempo todo, ok?
+            </div>
+            <div class="row p-3">
+                <button class="pode-deixar-btn" (click)="dismissOnBoarding()">Pode deixar</button>
+            </div>
+
         </div>
     </div>
 </div>

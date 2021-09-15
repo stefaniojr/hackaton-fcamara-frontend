@@ -1,6 +1,6 @@
 .header {
   padding: 0;
-  img{
+  img {
     cursor: pointer;
   }
 }
@@ -14,7 +14,7 @@
 .welcome-text {
   text-align: center;
 
-  span {
+  h1 {
     color: #000;
     font-size: 24px;
     font-weight: 600;
@@ -33,91 +33,27 @@
 }
 
 .ver-agendamentos-btn {
-  background-color: #FE4400;
+  background-color: #3e3e9d;
 }
 
 .ver-agendamentos-btn:hover {
-  background-color: #D03800;
-}
-
-.agendar-btn {
-  background-color: #3E3E9D;
-}
-
-.agendar-btn:hover {
   background-color: #333380;
 }
 
-.onboarding-wrapper-wrapper {
-  margin-bottom: 54px;
-}
-
-.onboarding-img {
-  width: 100%;
-  @media screen and (min-width: 568px) {
-    border-radius: 16px 16px 0 0;
-  }
-}
-
-.onboarding-icon {
-  width: 45px;
-  margin-bottom: 30px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-
-.onboarding-titulo {
-  margin-bottom: 25px;
-  font-size: 24px;
-  line-height: 120%;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.onboarding-instructions {
-  text-align: center;
-  font-size: 18px;
-  line-height: 130%;
-  margin-bottom: 10px;
-
-  span{
-    color: #fe4400;
-  }
-}
-
-.arrow-left-animate:hover{
-  cursor: pointer;
-  transform: translate(-5px, 0px);
-  transition: transform 400ms ease;
-}
-
-.arrow-right-animate:hover{
-  cursor: pointer;
-  transform: translate(5px, 0px);
-  transition: transform 400ms ease;
-}
-
-.power-off-animate{
-  transition: transform .2s; /* Animation */
-}
-
-.power-off-animate:hover{
-  transform: scale(1.25);
-}
-
-.pode-deixar-btn {
+.agendar-btn {
   background-color: #fe4400;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  height: 64px;
-  line-height: 120%;
 }
 
-.pode-deixar-btn:hover{
-  background-color: #D03800;
+.agendar-btn:hover {
+  background-color: #d03800;
+}
+
+.power-off-animate {
+  transition: transform 0.2s; /* Animation */
+}
+
+.power-off-animate:hover {
+  transform: scale(1.25);
 }
 
 .protocolo-wrapper {
@@ -134,7 +70,7 @@
   }
 }
 
-@media screen and (max-width: 568px){
+@media screen and (max-width: 568px) {
   .header {
     margin-bottom: 9vh;
   }
@@ -143,26 +79,24 @@
     margin-bottom: 11vh;
   }
 
-  .welcome-text{
+  .welcome-text {
     margin-bottom: 3vh;
   }
 
-  .home-btn{
+  .home-btn {
     margin-bottom: 1.5vh;
   }
 
-  .protocolo-wrapper{
-    a,img{
+  .protocolo-wrapper {
+    a,
+    img {
       margin-top: 1.5vh;
       margin-bottom: 1.5vh;
     }
-    
   }
-  
 }
 
-
-@media screen and (min-width: 568px){
+@media screen and (min-width: 568px) {
   .header {
     margin-bottom: 6vh;
   }
@@ -171,18 +105,18 @@
     margin-bottom: 6.5vh;
   }
 
-  .welcome-text{
+  .welcome-text {
     margin-bottom: 3vh;
   }
 
-  .home-btn{
+  .home-btn {
     margin-bottom: 1.2vh;
   }
 
-  .protocolo-wrapper{
-    a,img{
+  .protocolo-wrapper {
+    a,
+    img {
       margin-bottom: 3vh;
     }
-    
   }
 }

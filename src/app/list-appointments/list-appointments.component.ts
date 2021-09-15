@@ -54,7 +54,7 @@ export class ListAppointmentsComponent implements OnInit {
   async cancelarAgendamento(id: string) {
     try {
       await this.api.deleteAgendamento(id);
-      this.loadAgendamentos();
+      await this.loadAgendamentos();
     } catch (e) {
       console.log(e);
     }

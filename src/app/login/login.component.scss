@@ -6,12 +6,11 @@
 
 .acesse-text {
   text-align: center;
-  span {
+  h1 {
     color: #3e3e3e;
     font-size: 20px;
     font-weight: 600;
     line-height: 120%;
-    
   }
 }
 
@@ -36,8 +35,8 @@ input {
   box-sizing: border-box;
 }
 
-input:focus{
-  border: 1px solid #F7B686;
+input:focus {
+  border: 1px solid #f7b686;
 }
 
 input[type="email"] {
@@ -63,55 +62,118 @@ button {
   line-height: 120%;
 }
 
-button:hover:enabled{
-  background-color: #D03800;
+button:hover:enabled {
+  background-color: #d03800;
 }
 
 button:disabled,
-button[disabled]{
-  opacity: 0.5; 
+button[disabled] {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 @media screen and (max-width: 568px) {
-  .logo-img{
+  .logo-img {
     margin-bottom: 7vh;
   }
 
-  .acesse-text{
-    span{
+  .acesse-text {
+    span {
       margin-bottom: 5.5vh;
     }
   }
   input[type="password"],
-  input[type="text"]{
+  input[type="text"] {
     margin-bottom: 4vh;
   }
-  
+
   input[type="email"] {
     margin-top: 5vh;
     margin-bottom: 3vh;
   }
-
 }
 
 @media screen and (min-width: 568px) {
-  .logo-img{
+  .logo-img {
     margin-bottom: 4vh;
   }
 
-  .acesse-text{
-    span{
+  .acesse-text {
+    span {
       margin-bottom: 3vh;
     }
   }
   input[type="password"],
-  input[type="text"]{
+  input[type="text"] {
     margin-bottom: 2vh;
   }
-  
+
   input[type="email"] {
     margin-top: 2.5vh;
     margin-bottom: 1.5vh;
   }
+}
+
+.onboarding-wrapper-wrapper {
+  margin-bottom: 54px;
+}
+
+.onboarding-img {
+  width: 100%;
+  @media screen and (min-width: 568px) {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+.onboarding-icon {
+  width: 45px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.onboarding-titulo {
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 120%;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.onboarding-instructions {
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 10px;
+
+  span {
+    color: #fe4400;
+  }
+}
+
+.arrow-left-animate:hover {
+  cursor: pointer;
+  transform: translate(-5px, 0px);
+  transition: transform 400ms ease;
+}
+
+.arrow-right-animate:hover {
+  cursor: pointer;
+  transform: translate(5px, 0px);
+  transition: transform 400ms ease;
+}
+
+.pode-deixar-btn {
+  background-color: #fe4400;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  height: 64px;
+  line-height: 120%;
+}
+
+.pode-deixar-btn:hover {
+  background-color: #d03800;
 }

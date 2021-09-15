@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -40,6 +40,8 @@ export class AppointmentComponent implements OnInit {
   id: string;
   nome: string;
 
+  public innerWidth: any;
+
   dataFiltro: Filtro;
 
   constructor(
@@ -53,6 +55,7 @@ export class AppointmentComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.innerWidth = window.innerWidth;
     this.funcionarios = await this.obterFuncionarios();
     const profile = await this.storage.get('profile');
     this.id = JSON.parse(profile).id;
@@ -230,5 +233,10 @@ export class AppointmentComponent implements OnInit {
     return arr.filter(function (r) {
       return r != value;
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 }
