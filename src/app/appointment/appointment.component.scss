@@ -139,6 +139,7 @@ button[disabled] {
   border-radius: 16px 16px 16px 16px;
   margin-bottom: 8px;
   cursor: pointer;
+  width: 100%;
 
   img {
     vertical-align: middle;
@@ -163,7 +164,8 @@ button[disabled] {
   height: 52vh;
   margin-bottom: 3vh;
   overflow: auto;
-  
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .radio-group {
