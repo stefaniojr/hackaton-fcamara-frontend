@@ -38,10 +38,10 @@
 
 ## ⬆️ Subindo localmente
 
-## Que legal! Como contribuir?
+## 🚀 Que legal! Como contribuir?
 
 
-## Carinhosamente feito por
+## 🧡💻 Carinhosamente feito por
 
 <table>
   <tr>
