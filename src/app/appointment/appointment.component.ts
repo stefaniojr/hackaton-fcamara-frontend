@@ -67,6 +67,7 @@ export class AppointmentComponent implements OnInit {
 
     this.innerWidth = window.innerWidth;
     this.funcionarios = await this.obterFuncionarios();
+    this.funcionarios.sort(this.compare);
     const profile = await this.storage.get('profile');
     this.id = JSON.parse(profile).id;
     this.nome = JSON.parse(profile).nome;
@@ -248,5 +249,15 @@ export class AppointmentComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
+  }
+
+  compare(a: any, b: any) {
+    if (a.nome < b.nome) {
+      return -1;
+    }
+    if (a.nome > b.nome) {
+      return 1;
+    }
+    return 0;
   }
 }
