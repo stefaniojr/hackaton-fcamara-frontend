@@ -15,12 +15,12 @@
 </h4>
 
 <p align="center">
- <a href="#-sobre">Sobre</a> •
- <a href="#funcionalidades">O que dá pra fazer?</a> •
- <a href="#layout">Na prática</a> • 
+ <a href="#%EF%B8%8F-sobre">Sobre</a> •
+ <a href="#-o-que-dá-pra-fazer">O que dá pra fazer?</a> •
+ <a href="#-na-prática">Na prática</a> • 
  <a href="#tecnologias">Setup do projeto Front End</a> • 
- <a href="#tecnologias">Subindo localmente</a> • 
- <a href="#que-legal-como-contribuir">Que legal! Como contribuir?</a> • 
+ <a href="%EF%B8%8F-subindo-localmente">Subindo localmente</a> • 
+ <a href="#-que-legal-como-contribuir">Que legal! Como contribuir?</a> • 
  <a href="#-carinhosamente-feito-por">Autores</a>
 
 </p>
