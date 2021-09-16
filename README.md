@@ -21,7 +21,7 @@
  <a href="#tecnologias">Setup do projeto Front End</a> • 
  <a href="#tecnologias">Subindo localmente</a> • 
  <a href="#tecnologias">Que legal! Como contribuir?</a> • 
- <a href="#autores">Autores</a>
+ <a href="#carinhosamente-feito-por">Autores</a>
 
 </p>
 
@@ -40,8 +40,8 @@
 
 ## 🚀 Que legal! Como contribuir?
 
-🧡💻
-## Autores
+
+## Carinhosamente feito por
 
 <table>
   <tr>
