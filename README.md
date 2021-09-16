@@ -21,6 +21,17 @@
  <a href="#tecnologias">Setup do projeto Front End</a> • 
  <a href="#tecnologias">Subindo localmente</a> • 
  <a href="#tecnologias">Que legal! Como contribuir?</a> • 
- <a href="#autores">Autores</a>
+ <a href="#autores">Carinhosamente feito por</a>
 
 </p>
+
+## 🧡💻 Carinhosamente feito por
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/anagabatteli"><img style="border-radius: 50%;" src="src/assets/avatars/al.gabatteli@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Ana Gabatteli</b></sub></a><br /><a href="https://www.linkedin.com/in/anagabatteli/" title="L‍inkedin">L‍inkedin</a><div><i>UX Designer</i></div></td>
+    <td align="center"><a href="https://github.com/kintupla"><img style="border-radius: 50%;" src="src/assets/avatars/matheuswebmw@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Matheus Honorato</b></sub></a><br /><a href="https://www.linkedin.com/in/matheus-honorato-43533693/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
+    <td align="center"><a href="https://github.com/NatanMenezes"><img style="border-radius: 50%;" src="src/assets/avatars/natanmenezes31@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Natã Menezes</b></sub></a><br /><a href="https://www.linkedin.com/in/natanmenezes31/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
+    <td align="center"><a href="https://github.com/stefaniojr"><img style="border-radius: 50%;" src="src/assets/avatars/stefaniojr@live.com.jpg" width="100px;" alt=""/><br /><sub><b>Stefânio Junior</b></sub></a><br /><a href="https://www.linkedin.com/in/stefaniojr/" title="L‍inkedin">L‍inkedin</a><div><i>Front End Developer</i></div></td>
+  </tr>
+</table>
