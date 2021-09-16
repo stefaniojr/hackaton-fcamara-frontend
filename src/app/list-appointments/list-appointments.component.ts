@@ -23,7 +23,7 @@ import { ApiService } from '../services/api.service';
 })
 export class ListAppointmentsComponent implements OnInit {
   public agendamentosObj: Agendamentos;
-  public agendamentos: Agendamento;
+  public agendamentos: any;
   id: string;
 
   constructor(
@@ -42,6 +42,7 @@ export class ListAppointmentsComponent implements OnInit {
     try {
       this.agendamentosObj = await this.api.getAgendamentos(this.id);
       this.agendamentos = this.agendamentosObj.data;
+      this.agendamentos.sort(this.compare);
     } catch (e) {
       console.log(e);
     }
@@ -58,5 +59,19 @@ export class ListAppointmentsComponent implements OnInit {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  compare(a: any, b: any) {
+    var parts1 = a.data.split('/');
+    var parts2 = b.data.split('/');
+    var d1 = parts1[2] + parts1[1] + parts1[0];
+    var d2 = parts2[2] + parts2[1] + parts2[0];
+    if (d1 < d2) {
+      return -1;
+    }
+    if (d1 > d2) {
+      return 1;
+    }
+    return 0;
   }
 }
