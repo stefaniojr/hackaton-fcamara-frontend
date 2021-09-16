@@ -15,17 +15,17 @@
 </h4>
 
 <p align="center">
- <a href="#sobre">Sobre</a> •
+ <a href="#-sobre">Sobre</a> •
  <a href="#funcionalidades">O que dá pra fazer?</a> •
  <a href="#layout">Na prática</a> • 
  <a href="#tecnologias">Setup do projeto Front End</a> • 
  <a href="#tecnologias">Subindo localmente</a> • 
  <a href="#tecnologias">Que legal! Como contribuir?</a> • 
- <a href="#autores">Carinhosamente feito por</a>
+ <a href="#-autores">Carinhosamente feito por</a>
 
 </p>
 
-<h1 id="sobre>🖊️ Sobre</h1>
+## 🖊️ Sobre
 
 ## 🤔 O que dá pra fazer?
 
@@ -40,7 +40,7 @@
 
 ## 🚀 Que legal! Como contribuir?
 
-<h1 id="autores">🧡💻 Carinhosamente feito por</h1>
+## 🧡💻 Carinhosamente feito por
 
 <table>
   <tr>
