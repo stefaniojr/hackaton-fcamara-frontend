@@ -21,7 +21,7 @@
  <a href="#tecnologias">Setup do projeto Front End</a> • 
  <a href="#tecnologias">Subindo localmente</a> • 
  <a href="#tecnologias">Que legal! Como contribuir?</a> • 
- <a href="#-autores">Autores</a>
+ <a href="#autores">Autores</a>
 
 </p>
 
