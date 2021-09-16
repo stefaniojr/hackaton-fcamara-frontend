@@ -20,7 +20,7 @@
  <a href="#layout">Na prática</a> • 
  <a href="#tecnologias">Setup do projeto Front End</a> • 
  <a href="#tecnologias">Subindo localmente</a> • 
- <a href="#tecnologias">Que legal! Como contribuir?</a> • 
+ <a href="#que-legal-como-contribuir">Que legal! Como contribuir?</a> • 
  <a href="#carinhosamente-feito-por">Autores</a>
 
 </p>
@@ -38,7 +38,7 @@
 
 ## ⬆️ Subindo localmente
 
-## 🚀 Que legal! Como contribuir?
+## Que legal! Como contribuir?
 
 
 ## Carinhosamente feito por
