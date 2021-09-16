@@ -40,7 +40,7 @@
 
 ## 🚀 Que legal! Como contribuir?
 
-## Autores
+## 🧡💻 Autores
 
 <table>
   <tr>
