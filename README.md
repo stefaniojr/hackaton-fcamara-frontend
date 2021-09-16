@@ -25,7 +25,22 @@
 
 </p>
 
-## 🧡💻 Carinhosamente feito por
+## 🖊️ :sobre: Sobre
+
+## 🤔 O que dá pra fazer?
+
+## 🏋🏽 Na prática
+### Mobile
+
+### Web
+
+## 🛠 Setup do projeto Front End
+
+## ⬆️ Subindo localmente
+
+## 🚀 Que legal! Como contribuir?
+
+## 🧡💻 :autores: Carinhosamente feito por
 
 <table>
   <tr>
