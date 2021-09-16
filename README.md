@@ -47,14 +47,14 @@ Ambos os usuários possuem conta no gmail com mesma senha! Dica: logue em um no 
 
 Você também poderá realizar agendamentos, convidar amigos, checar agendamentos realizados e excluir algum deles. Todas essas visões estão bem adaptadas para navegadores web ou mobile.
 ### Mobile
-<img src="src/assets/mobile-1.jpeg">
-<img src="src/assets/mobile-2.jpeg">
-<img src="src/assets/mobile-3.jpeg">
+<img src="src/assets/mobile-1.jpeg" width=225>
+<img src="src/assets/mobile-2.jpeg" width=225>
+<img src="src/assets/mobile-3.jpeg" width=225>
 
 ### Web
-<img src="src/assets/browser-1.png">
-<img src="src/assets/browser-2.png">
-<img src="src/assets/browser-3.png">
+<img src="src/assets/browser-1.png" width=800>
+<img src="src/assets/browser-2.png" width=800>
+<img src="src/assets/browser-3.png" width=800>
 
 
 <a href="https://www.youtube.com/watch?v=nJJgadxlk1U" target="_blank">Clique aqui para acessar o tutorial em vídeo</a>
@@ -92,7 +92,7 @@ Acha que algo pode ser melhorado de alguma forma? Quer implementar uma nova func
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/anagabatteli"><img style="border-radius: 50%;" src="src/assets/avatars/al.gabatteli@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Ana Gabatteli</b></sub></a><br /><a href="https://www.linkedin.com/in/anagabatteli/" title="L‍inkedin">L‍inkedin</a><div><i>UX Designer</i></div></td>
+    <td align="center"><a href="https://github.com/anagabatteli"><img src="src/assets/avatars/al.gabatteli@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Ana Gabatteli</b></sub></a><br /><a href="https://www.linkedin.com/in/anagabatteli/" title="L‍inkedin">L‍inkedin</a><div><i>UX Designer</i></div></td>
     <td align="center"><a href="https://github.com/kintupla"><img style="border-radius: 50%;" src="src/assets/avatars/matheuswebmw@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Matheus Honorato</b></sub></a><br /><a href="https://www.linkedin.com/in/matheus-honorato-43533693/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
     <td align="center"><a href="https://github.com/NatanMenezes"><img style="border-radius: 50%;" src="src/assets/avatars/natanmenezes31@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Natã Menezes</b></sub></a><br /><a href="https://www.linkedin.com/in/natanmenezes31/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
     <td align="center"><a href="https://github.com/stefaniojr"><img style="border-radius: 50%;" src="src/assets/avatars/stefaniojr@live.com.jpg" width="100px;" alt=""/><br /><sub><b>Stefânio Junior</b></sub></a><br /><a href="https://www.linkedin.com/in/stefaniojr/" title="L‍inkedin">L‍inkedin</a><div><i>Front End Developer</i></div></td>
