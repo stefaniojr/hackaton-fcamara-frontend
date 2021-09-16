@@ -47,8 +47,15 @@ Ambos os usuários possuem conta no gmail com mesma senha! Dica: logue em um no 
 
 Você também poderá realizar agendamentos, convidar amigos, checar agendamentos realizados e excluir algum deles. Todas essas visões estão bem adaptadas para navegadores web ou mobile.
 ### Mobile
+<img src="src/assets/mobile-1.jpeg">
+<img src="src/assets/mobile-2.jpeg">
+<img src="src/assets/mobile-3.jpeg">
 
 ### Web
+<img src="src/assets/browser-1.png">
+<img src="src/assets/browser-2.png">
+<img src="src/assets/browser-3.png">
+
 
 <a href="https://www.youtube.com/watch?v=nJJgadxlk1U" target="_blank">Clique aqui para acessar o tutorial em vídeo</a>
 
