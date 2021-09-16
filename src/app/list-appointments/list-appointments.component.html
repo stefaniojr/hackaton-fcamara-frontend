@@ -14,15 +14,15 @@
             <div class="custom-card d-flex justify-content-between" *ngFor="let agend of agendamentos">
                 <div class="agendamento-info-wrapper p-2">
                     <div class="text-card">
-                        <img src="./../../assets/calendar.svg" alt="">
+                        <img src="./../../assets/calendar.svg" alt="" aria-hidden="true">
                         {{agend.data | dateText}}
                     </div>
                     <div class="text-card">
-                        <img src="./../../assets/clock.svg" alt="">
+                        <img src="./../../assets/clock.svg" alt="" aria-hidden="true">
                         Turno: {{agend.turno | turnoText}}
                     </div>
                     <div class="text-card">
-                        <img src="./../../assets/map-pin.svg" alt="">
+                        <img src="./../../assets/map-pin.svg" alt="" aria-hidden="true">
                         {{agend.estacao | SPText}}
                     </div>
                 </div>

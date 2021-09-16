@@ -29,7 +29,7 @@
                             <button class="option2-btn" (click)="setSP()">São Paulo</button>
                             <button class="option1-btn" (click)="setSantos()">Santos</button>
                         </div>
-                        <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img">
+                        <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img" aria-hidden="true">
                     </div>
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-titulo">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-12 m-2">
-                                <mat-calendar [dateFilter]="myFilter" #picker [minDate]="minDate" [maxDate]="maxDate"
+                                <mat-calendar [dateFilter]="myFilter" [minDate]="minDate" [maxDate]="maxDate"
                                     (selectedChange)="setDate($event)"></mat-calendar>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Manha*100}}%</div>
                                     <mat-progress-bar mode="determinate"
-                                        [value]="dataFiltro?.Capacidade_Usada_Manha*100" class="w-100 m-1">
+                                        [value]="dataFiltro?.Capacidade_Usada_Manha*100" class="w-100 m-1" aria-hidden="true">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -78,7 +78,7 @@
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Usada_Tarde*100}}%</div>
                                     <mat-progress-bar mode="determinate"
-                                        [value]="dataFiltro?.Capacidade_Usada_Tarde*100" class="w-100 m-1">
+                                        [value]="dataFiltro?.Capacidade_Usada_Tarde*100" class="w-100 m-1" aria-hidden="true">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -95,7 +95,7 @@
                                 <div class="col-8">
                                     <div class="detail-text float-end">{{dataFiltro?.Capacidade_Ambos*100}}%</div>
                                     <mat-progress-bar mode="determinate" [value]="dataFiltro?.Capacidade_Ambos*100"
-                                        class="w-100 m-1">
+                                        class="w-100 m-1" aria-hidden="true">
                                     </mat-progress-bar>
                                     <div class="detail-text float-end">Capacidade</div>
                                 </div>
@@ -103,7 +103,7 @@
                         </mat-radio-group>
                         <button (click)="goForward()"
                             [disabled]="!form.value.turno || !form.value.data">Agendar</button>
-                        <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img">
+                        <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img" aria-hidden="true">
                     </div>
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" class="step-img step-ilustration" alt="Ilustração em fundo branco. À esquerda, um homem de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um envelope azul aberto, com uma folha branca com pauta e a palavra CONVITE em laranja, no centro superior. O homem tem pele clara, cabelos curtos, lisos e marrons e usa blusa verde clara, calça marrom e sapatos azuis escuros. Ele segura uma maleta azul na altura da coxa enquanto olha para um celular laranja na mão esquerda, na altura do ombro.  Uma linha azul, tracejada faz uma curva sobre o tronco do homem e passa pela tela do celular, chagando à ponta traseira de um avião de papel azul, à direita da tela.
@@ -120,7 +120,7 @@
                             <button class="option1-btn" (click)="finishAppointment(false)">Hoje não</button>
                         </div>
 
-                        <img src="./../../assets/appointment-step-3.svg" alt="" class="step-img">
+                        <img src="./../../assets/appointment-step-3.svg" alt="" class="step-img" aria-hidden="true">
                     </div>
                     <div class="step-4" *ngIf="showStep4" [@enterAnimation]>
                         <div class="step-titulo">
@@ -161,7 +161,7 @@
                 <div class="protocolo-wrapper d-flex justify-content-center align-items-center">
                     <a href="https://www.slideshare.net/FCamara_Consultoria/plano-de-retomada-fcamara"
                         target="_blank">Acesse os protocolos de segurança</a>
-                    <img src="./../../assets/right-arrow.svg" alt="">
+                    <img src="./../../assets/right-arrow.svg" alt="" aria-hidden="true">
                 </div>
                 <button (click)="goHome()">Pode deixar</button>
             </div>

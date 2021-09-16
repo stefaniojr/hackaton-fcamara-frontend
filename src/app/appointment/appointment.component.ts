@@ -1,4 +1,9 @@
-import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -7,8 +12,9 @@ import { StorageService } from '../services/storage.service';
 import { ApiService } from '../services/api.service';
 import { Filtro } from './models/filtro.model';
 import { Funcionario } from './models/funcionario.model';
-import { GetShortName }  from 'src/app/pipes/short-name.pipe';
-import { GetTurnoText }  from 'src/app/pipes/turno-text.pipe';
+import { GetShortName } from 'src/app/pipes/short-name.pipe';
+import { GetTurnoText } from 'src/app/pipes/turno-text.pipe';
+import { DateRange } from '@angular/material/datepicker';
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
@@ -25,7 +31,8 @@ import { GetTurnoText }  from 'src/app/pipes/turno-text.pipe';
 })
 export class AppointmentComponent implements OnInit {
   form: FormGroup; // define um formulário a ser usado para login.
-  minDate = new Date();
+  today = new Date();
+  minDate: Date;
   maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
 
   showStep1: boolean = true;
@@ -55,6 +62,9 @@ export class AppointmentComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.minDate = new Date(this.today);
+    this.minDate.setDate(this.minDate.getDate() + 1);
+
     this.innerWidth = window.innerWidth;
     this.funcionarios = await this.obterFuncionarios();
     const profile = await this.storage.get('profile');
