@@ -25,7 +25,7 @@
 
 </p>
 
-## 🖊️ :sobre: Sobre
+<h1 id="sobre>🖊️ Sobre</h1>
 
 ## 🤔 O que dá pra fazer?
 
@@ -40,7 +40,7 @@
 
 ## 🚀 Que legal! Como contribuir?
 
-## 🧡💻 :autores: Carinhosamente feito por
+<h1 id="autores">🧡💻 Carinhosamente feito por</h1>
 
 <table>
   <tr>
