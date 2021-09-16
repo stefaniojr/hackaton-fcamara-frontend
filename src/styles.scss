@@ -1,6 +1,20 @@
 @import "@fontsource/metropolis";
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+@import '~@angular/material/theming';
+
+// Just include this next line once in your application, so if you are building
+// a file just to theme the datepicker, don't put it here.
+@include mat-core();
+
+// Define the datepicker theme.
+$datepicker-primary: mat-palette($mat-indigo);
+$datepicker-accent:  mat-palette($mat-pink, A200, A100, A400);
+$datepicker-theme:   mat-light-theme($datepicker-primary, $datepicker-accent);
+
+// Apply the theme to your component
+@include mat-datepicker-theme($datepicker-theme);
+
 * {
   font-family: "Metropolis";
 }

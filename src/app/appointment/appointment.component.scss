@@ -185,6 +185,6 @@ button[disabled] {
   line-height: 130%;
 }
 
-::ng-deep .mat-progress-bar {
-  border-radius: 100px;
+::ng-deep .mat-radio-outer-circle {
+  background: red !important;
 }
