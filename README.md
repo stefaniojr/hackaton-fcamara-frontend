@@ -19,9 +19,9 @@
  <a href="#-o-que-dá-pra-fazer">O que dá pra fazer?</a> •
  <a href="#-na-prática">Na prática</a> • 
  <a href="#-setup-do-projeto-front-end">Setup do projeto Front End</a> • 
- <a href="%EF%B8%8F-subindo-localmente">Subindo localmente</a> • 
+ <a href="#%EF%B8%8F-subindo-localmente">Subindo localmente</a> • 
  <a href="#-que-legal-como-contribuir">Que legal! Como contribuir?</a> • 
- <a href="#-carinhosamente-feito-por">Autores</a>
+ <a href="#-carinhosamente-feito-por">Carinhosamente feito por</a>
 
 </p>
 
