@@ -37,7 +37,7 @@ FCalendar é o sistema de agendamentos desenvolvido pelo Squad 23 no Hackaton 20
 - Checar e cancelar agendamentos.
 
 ## 🏋🏽 Na prática
-Para realizar um agendamento é bem simples! Basta logar na sua conta previamente cadastrada por um administrador. Criamos usuários de teste para que você possa testar o sistema, fique à vontade utilizar qualquer um deles:
+Para realizar um agendamento é bem simples! Basta logar na sua conta previamente cadastrada por um administrador. Criamos usuários de teste para que você possa testar o sistema, fique à vontade para utilizar qualquer um deles:
 
 `{ "email": "marimendanha.fcamara@gmail.com", "senha": "fcalendar" }`
 
@@ -69,8 +69,8 @@ Você também poderá realizar agendamentos, convidar amigos, checar agendamento
 ### Localmente
 - Clone o repositório em sua máquina;
 - Instale as dependências usando o comando `npm install`;
-- Na raiz do repositório, rode este comando `ng serve` para iniciar o servidor de desenvolvimento;
-- A Aplicação estará disponível na porta `http://localhost:4200/`.
+- Na raiz do repositório, rode o comando `ng serve` para iniciar o servidor de desenvolvimento;
+- A aplicação estará disponível na porta `http://localhost:4200/`.
 - Não se preocupe com a aplicação Back End! Já estamos apontando para o link dela na web. Entretanto, caso queira testar com o Back End local vá até `src/app/services/api.service.ts` e altere a variável `baseURL` no método `buildURL()` para a URL local.
 
 ### Estamos na Web!
