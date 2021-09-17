@@ -4,7 +4,7 @@
 
 <div align="center">
   <img alt="Logo HTML5." src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-  <img alt="Logo CSS3." src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+  <img alt="Logo SCSS." src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"> 
   <img alt="Logo Typescript." src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"> 
   <img alt="Logo Angular." src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"> 
   <img alt="Logo Bootstrap." src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> 
@@ -19,7 +19,7 @@
  <a href="#-o-que-dá-pra-fazer">O que dá pra fazer?</a> •
  <a href="#-na-prática">Na prática</a> • 
  <a href="#-setup-do-projeto-front-end">Setup do projeto Front End</a> • 
- <a href="#%EF%B8%8F-como-subir">Subindo localmente</a> • 
+ <a href="#%EF%B8%8F-como-subir">Como subir?</a> • 
  <a href="#-que-legal-como-contribuir">Que legal! Como contribuir?</a> • 
  <a href="#-carinhosamente-feito-por">Carinhosamente feito por</a>
 
@@ -37,7 +37,7 @@ FCalendar é o sistema de agendamentos desenvolvido pelo Squad 23 no Hackaton 20
 - Checar e cancelar agendamentos.
 
 ## 🏋🏽 Na prática
-Para realizar um agendamento é bem simples! Basta logar na sua conta previamente cadastrada por um administrador. Criamos usuários de teste para que você possa testar o sistema, fique à vontade utilizar qualquer um deles:
+Para realizar um agendamento é bem simples! Basta logar na sua conta previamente cadastrada por um administrador. Criamos usuários de teste para que você possa testar o sistema, fique à vontade para utilizar qualquer um deles:
 
 `{ "email": "marimendanha.fcamara@gmail.com", "senha": "fcalendar" }`
 
@@ -47,8 +47,13 @@ Ambos os usuários possuem conta no gmail com mesma senha! Dica: logue em um no 
 
 Você também poderá realizar agendamentos, convidar amigos, checar agendamentos realizados e excluir algum deles. Todas essas visões estão bem adaptadas para navegadores web ou mobile.
 ### Mobile
+<img src="src/assets/mobile-1.jpeg" width=225>    <img src="src/assets/mobile-2.jpeg" width=225>    <img src="src/assets/mobile-3.jpeg" width=225>
 
 ### Web
+<img src="src/assets/browser-1.png" width=800>
+<img src="src/assets/browser-2.png" width=800>
+<img src="src/assets/browser-3.png" width=800>
+
 
 <a href="https://www.youtube.com/watch?v=nJJgadxlk1U" target="_blank">Clique aqui para acessar o tutorial em vídeo</a>
 
@@ -62,8 +67,8 @@ Você também poderá realizar agendamentos, convidar amigos, checar agendamento
 ### Localmente
 - Clone o repositório em sua máquina;
 - Instale as dependências usando o comando `npm install`;
-- Na raiz do repositório, rode este comando `ng serve` para iniciar o servidor de desenvolvimento;
-- A Aplicação estará disponível na porta `http://localhost:4200/`.
+- Na raiz do repositório, rode o comando `ng serve` para iniciar o servidor de desenvolvimento;
+- A aplicação estará disponível na porta `http://localhost:4200/`.
 - Não se preocupe com a aplicação Back End! Já estamos apontando para o link dela na web. Entretanto, caso queira testar com o Back End local vá até `src/app/services/api.service.ts` e altere a variável `baseURL` no método `buildURL()` para a URL local.
 
 ### Estamos na Web!
@@ -85,7 +90,7 @@ Acha que algo pode ser melhorado de alguma forma? Quer implementar uma nova func
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/anagabatteli"><img style="border-radius: 50%;" src="src/assets/avatars/al.gabatteli@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Ana Gabatteli</b></sub></a><br /><a href="https://www.linkedin.com/in/anagabatteli/" title="L‍inkedin">L‍inkedin</a><div><i>UX Designer</i></div></td>
+    <td align="center"><a href="https://github.com/anagabatteli"><img src="src/assets/avatars/al.gabatteli@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Ana Gabatteli</b></sub></a><br /><a href="https://www.linkedin.com/in/anagabatteli/" title="L‍inkedin">L‍inkedin</a><div><i>UX Designer</i></div></td>
     <td align="center"><a href="https://github.com/kintupla"><img style="border-radius: 50%;" src="src/assets/avatars/matheuswebmw@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Matheus Honorato</b></sub></a><br /><a href="https://www.linkedin.com/in/matheus-honorato-43533693/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
     <td align="center"><a href="https://github.com/NatanMenezes"><img style="border-radius: 50%;" src="src/assets/avatars/natanmenezes31@gmail.com.jpg" width="100px;" alt=""/><br /><sub><b>Natã Menezes</b></sub></a><br /><a href="https://www.linkedin.com/in/natanmenezes31/" title="L‍inkedin">L‍inkedin</a><div><i>Back End Developer</i></div></td>
     <td align="center"><a href="https://github.com/stefaniojr"><img style="border-radius: 50%;" src="src/assets/avatars/stefaniojr@live.com.jpg" width="100px;" alt=""/><br /><sub><b>Stefânio Junior</b></sub></a><br /><a href="https://www.linkedin.com/in/stefaniojr/" title="L‍inkedin">L‍inkedin</a><div><i>Front End Developer</i></div></td>
