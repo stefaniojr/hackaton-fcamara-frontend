@@ -1,5 +1,6 @@
 <div class="browser-wrapper">
     <div class="container">
+        <!-- etapa de agendamento -->
         <header *ngIf="!showFinish">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="p-2">
@@ -15,6 +16,7 @@
         <div class="row justify-content-center" *ngIf="!showFinish">
             <div class="col-10">
                 <div *ngIf="true">
+                    <!-- primeira etapa do agendamento -->
                     <div class="step-1" *ngIf="showStep1" [@enterAnimation]>
                         <img class="step-img step-ilustration" src="./../../assets/person-location.svg"
                             alt="Ilustração em fundo branco. À esquerda, uma mulher de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um mapa com demarcações em azul e cinza. A mulher tem pele clara, cabelos longos, ondulados, marrons e usa blusa verde clara, calça marrom e tênis azuis com solado laranja. Ela está com o braço direito ao longo do corpo enquanto olha para um celular laranja na mão esquerda, na altura do ombro. No mapa, uma seta laranja aponta para um logo dentro de um balão de dialogo, com a letra F, em branco, no centro de uma gota na cor laranja, com a ponta para cima, à direita.">
@@ -31,6 +33,7 @@
                         </div>
                         <img src="./../../assets/appointment-step-1.svg" alt="" class="step-img" aria-hidden="true">
                     </div>
+                    <!-- segunda etapa do agendamento -->
                     <div class="step-2" *ngIf="showStep2" [@enterAnimation]>
                         <div class="step-titulo">
                             Em qual dia?
@@ -105,6 +108,7 @@
                             [disabled]="!form.value.turno || !form.value.data">Agendar</button>
                         <img src="./../../assets/appointment-step-2.svg" alt="" class="step-img" aria-hidden="true">
                     </div>
+                    <!-- terceira etapa do agendamento -->
                     <div class="step-3" *ngIf="showStep3" [@enterAnimation]>
                         <img src="./../../assets/person-invite.svg" class="step-img step-ilustration" alt="Ilustração em fundo branco. À esquerda, um homem de perfil direito ao lado da tela de um grande celular com borda azul escuro. Na tela, um envelope azul aberto, com uma folha branca com pauta e a palavra CONVITE em laranja, no centro superior. O homem tem pele clara, cabelos curtos, lisos e marrons e usa blusa verde clara, calça marrom e sapatos azuis escuros. Ele segura uma maleta azul na altura da coxa enquanto olha para um celular laranja na mão esquerda, na altura do ombro.  Uma linha azul, tracejada faz uma curva sobre o tronco do homem e passa pela tela do celular, chagando à ponta traseira de um avião de papel azul, à direita da tela.
                         ">
@@ -142,6 +146,7 @@
             </div>
         </div>
 
+        <!-- etapa de confirmação do agendamento -->
         <div class="row" *ngIf="showFinish" [@enterAnimation]>
             <img src="./../../assets/person-confirmation.svg"
                 alt="Ilustração sobre fundo laranja claro na parte superior e branco na inferior, com 7 coronavirus azuis de diferentes tamanhos espalhados. Uma mulher em uma cadeira de rodas azul, voltada para a direita, acena para um homem em pé a sua frente. A mulher de pele clara, cabelos curtos, lisos, roxos, usa óculos de grau, blusa verde, calça cor de laranja e sapatos roxos. Ela está com o braço esquerdo levantado na direção do homem. Ele tem pele clara, cabelos longos, ondulados, marrons e usa camisa cinza escuro, calça verde clara e sapatos roxos. Entre eles, um retângulo cor de laranja, com uma seta em cada extremidade, apontando na direção da mulher e do homem. Em branco sobre o retângulo: 2 metros."

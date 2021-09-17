@@ -37,16 +37,16 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     this.innerWidth = window.innerWidth;
-    const profile = await this.storage.get('profile');
-    this.name = JSON.parse(profile).nome;
+    const profile = await this.storage.get('profile'); // recupera perfil do user logado do local storage
+    this.name = JSON.parse(profile).nome; // recupera nome
   }
 
   goAppointment() {
-    this.router.navigate(['/appointment']);
+    this.router.navigate(['/appointment']); // vai pra tela de iniciar agendamento
   }
 
   goListAppointments() {
-    this.router.navigate(['/list']);
+    this.router.navigate(['/list']); // vai pra tela de listar agendamentos
   }
 
   public async logout() {
@@ -56,6 +56,6 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerWidth = window.innerWidth;
+    this.innerWidth = window.innerWidth; // recupera largura atual da tela
   }
 }

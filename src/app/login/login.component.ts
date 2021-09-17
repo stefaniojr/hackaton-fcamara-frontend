@@ -26,6 +26,7 @@ import { ApiService } from '../services/api.service';
   ],
 })
 export class LoginComponent implements OnInit {
+  // variáveis de controle para onboarding
   onOnBoarding = false;
   onBoarding1 = true;
   onBoarding2 = false;
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // visualiza ou não a senha?
   changeInputType() {
     if (this.showPassword) {
       this.showPassword = false;
@@ -60,6 +62,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // ir pro path raiz
   goHome() {
     this.router.navigate(['/']);
   }
@@ -86,6 +89,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // navegação no onboarding
   goOnBoarding1() {
     this.onBoarding1 = true;
     this.onBoarding2 = false;
@@ -111,9 +115,9 @@ export class LoginComponent implements OnInit {
     this.onBoarding3 = false;
     this.router.navigate(['/']);
   }
-
+  
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerWidth = window.innerWidth;
+    this.innerWidth = window.innerWidth; // captura sempre o tamanho atual da largura
   }
 }

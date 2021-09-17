@@ -65,46 +65,6 @@ export class ApiService {
   }
 
   /**
-   * Realiza uma requisição do tipo PUT
-   * @param endpoint endpoint da API
-   * @param data dados a serem submetidos
-   * @param model modelo de retorno da requisição
-   */
-  private async makePut<T>(
-    endpoint: string,
-    data: any,
-    model: ClassConstructor<T>
-  ): Promise<any> {
-    const res = await this.http.put(this.buildURL(endpoint), data).toPromise();
-    if (typeof (model as any).toClass === 'function') {
-      return (model as any).toClass(res as any);
-    } else {
-      return plainToClass(model, res as any);
-    }
-  }
-
-  /**
-   * Realiza uma requisição do tipo DELETE
-   * @param endpoint endpoint da API
-   * @param data dados a serem submetidos
-   * @param model modelo de retorno da requisição
-   */
-  private async makeDelete<T>(
-    endpoint: string,
-    data: any,
-    model: ClassConstructor<T>
-  ): Promise<any> {
-    const res = await this.http
-      .delete(this.buildURL(endpoint) + data, data)
-      .toPromise();
-    if (typeof (model as any).toClass === 'function') {
-      return (model as any).toClass(res as any);
-    } else {
-      return plainToClass(model, res as any);
-    }
-  }
-
-  /**
    * Retorna a URL baseado no endpoint especificado
    * @param endpoint endpoint a ser chamado
    */

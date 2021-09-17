@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GetShortName implements PipeTransform {
   transform(value: string): string {
     var text_arr = value.split(' ');
-    return text_arr[0] + ' ' + text_arr[text_arr.length - 1];
+    return text_arr[0] + ' ' + text_arr[text_arr.length - 1]; // retorna primeiro e último nome
   }
 }

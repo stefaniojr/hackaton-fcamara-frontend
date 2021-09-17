@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { Agendamentos } from 'src/app/list-appointments/models/agendamentos.model';
-import { Agendamento } from 'src/app/appointment/models/agendamento.model';
 import { StorageService } from '../services/storage.service';
 import { ApiService } from '../services/api.service';
 
@@ -33,37 +32,41 @@ export class ListAppointmentsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    const profile = await this.storage.get('profile');
+    const profile = await this.storage.get('profile'); // recupera objeto de perfil do usuário logado
     this.id = JSON.parse(profile).id;
-    this.loadAgendamentos();
+    this.loadAgendamentos(); // carrega os agendamentos
   }
 
   async loadAgendamentos() {
     try {
-      this.agendamentosObj = await this.api.getAgendamentos(this.id);
-      this.agendamentos = this.agendamentosObj.data;
+      this.agendamentosObj = await this.api.getAgendamentos(this.id); // carrega objeto agendamentos
+      this.agendamentos = this.agendamentosObj.data; // pega o field data, field que contém o array de agendamentos do user
       this.agendamentos.sort(this.compare);
     } catch (e) {
       console.log(e);
     }
   }
 
+  // vai pra path raiz
   goBack() {
     this.router.navigate(['/']);
   }
 
   async cancelarAgendamento(id: string) {
     try {
-      await this.api.deleteAgendamento(id);
-      await this.loadAgendamentos();
+      await this.api.deleteAgendamento(id); // deleta o agendamento
+      await this.loadAgendamentos(); // atualiza a lista
     } catch (e) {
       console.log(e);
     }
   }
 
+  // função de callback para ordenar os agendamentos
   compare(a: any, b: any) {
+    // quebra em 3 partes
     var parts1 = a.data.split('/');
     var parts2 = b.data.split('/');
+    // coloca no formato YYYYMMDD, formato interessante para ordenação
     var d1 = parts1[2] + parts1[1] + parts1[0];
     var d2 = parts2[2] + parts2[1] + parts2[0];
     if (d1 < d2) {

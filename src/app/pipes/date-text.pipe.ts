@@ -8,9 +8,9 @@ export class GetDateText implements PipeTransform {
   month: string;
 
   transform(value: string): string {
-    var parts = value.split('/');
+    var parts = value.split('/'); // quebra a data em partes
     var month = parts[1];
-
+    // escolhe o mês textual
     if (month==='01'){
         this.month = "Janeiro ";
     }
@@ -59,6 +59,6 @@ export class GetDateText implements PipeTransform {
         this.month = "Dezembro ";
     }
     
-    return parts[0] + " de " + this.month + parts[2];
+    return parts[0] + " de " + this.month + parts[2]; // retornar as partes desejada
   }
 }
